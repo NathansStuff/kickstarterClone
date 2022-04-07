@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function Navbar() {
   const Logo = (
@@ -9,15 +10,13 @@ export default function Navbar() {
   )
   return (
     <div className="flex w-full flex-col">
-      <div className="flex justify-center border py-5 md:hidden">{Logo}</div>
+      <div className="flex justify-center border py-5 md:hidden">
+        <Link href="/">{Logo}</Link>
+      </div>
       <div className="grid w-full grid-cols-3 py-5 px-10">
         <div className="flex space-x-5">
-          <div>
-            <h1 className="cursor-pointer">Discover</h1>
-          </div>
-          <div>
-            <h1 className="cursor-pointer">Start a project</h1>
-          </div>
+          <h1 className="cursor-pointer">Search</h1>
+          <Link href="/">Start a project</Link>
         </div>
         <div className="hidden justify-center md:flex">{Logo}</div>
         <div className="flex justify-end space-x-5">
@@ -43,13 +42,15 @@ export default function Navbar() {
           <h1 className="cursor-pointer">Log in</h1>
         </div>
       </div>
-      <div className="top-1 flex justify-around border px-20 py-5">
-        <h1 className="cursor-pointer">Arts</h1>
-        <h1 className="cursor-pointer">Comic & Illustation</h1>
-        <h1 className="cursor-pointer">Design & Tech</h1>
-        <h1 className="cursor-pointer">Film</h1>
-        <h1 className="cursor-pointer">Food & Craft</h1>
-        <h1 className="cursor-pointer">Games</h1>
+      <div className=" top-1 flex h-20 items-center justify-around border px-20">
+        <div>
+          <h1 className="peer">Comic & Illustation</h1>
+          <div className="h-0 bg-green-700 peer-hover:h-0.5" />
+        </div>
+        <Link href="/">Design & Tech</Link>
+        <Link href="/">Film</Link>
+        <Link href="/">Food & Craft</Link>
+        <Link href="/">Games</Link>
       </div>
     </div>
   )
