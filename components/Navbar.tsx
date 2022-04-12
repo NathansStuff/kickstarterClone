@@ -46,217 +46,246 @@ export default function Navbar() {
       Header: false,
     },
     {
-      Title: 'Collections',
+      Title: 'Just Launched',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Upcoming Projects',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Projects Near You',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Backed By People You Follow',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Everything',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Sections',
       href: '/',
       Header: true,
     },
     {
-      Title: 'Recommended For You',
+      Title: 'Arts',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Projects We Love',
+      Title: 'Comics & Illustrations',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Saved Projects',
+      Title: 'Design & Tech',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Trending',
+      Title: 'Film',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Newly Launched',
+      Title: 'Food & Craft',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Collections',
+      Title: 'Games',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Music',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Publishing',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Categories',
       href: '/',
       Header: true,
     },
     {
-      Title: 'Recommended For You',
+      Title: 'Art',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Projects We Love',
+      Title: 'Comics',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Saved Projects',
+      Title: 'Crafts',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Trending',
+      Title: 'Dance',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Newly Launched',
+      Title: 'Design',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Collections',
+      Title: 'Fashion',
       href: '/',
       Header: true,
     },
     {
-      Title: 'Recommended For You',
+      Title: 'Film & Video',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Projects We Love',
+      Title: 'Food',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Saved Projects',
+      Title: 'Games',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Trending',
+      Title: 'Journalism',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Newly Launched',
+      Title: 'Music',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Collections',
+      Title: 'Photography',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Publishing',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Technology',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'Theater',
+      href: '/',
+      Header: false,
+    },
+    {
+      Title: 'On Our Radar',
       href: '/',
       Header: true,
     },
     {
-      Title: 'Recommended For You',
+      Title: 'Affordable Art',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Projects We Love',
+      Title: 'Bikes',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Saved Projects',
+      Title: 'DIY',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Trending',
+      Title: 'Environmental',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Newly Launched',
+      Title: 'For Kids',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Collections',
-      href: '/',
-      Header: true,
-    },
-    {
-      Title: 'Recommended For You',
+      Title: 'LGBTQIA+',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Projects We Love',
+      Title: 'Magic & Divination',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Saved Projects',
+      Title: 'Public Benefit',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Trending',
+      Title: 'Robots',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Newly Launched',
+      Title: 'RPGs',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Collections',
-      href: '/',
-      Header: true,
-    },
-    {
-      Title: 'Recommended For You',
+      Title: 'Sci-Fi and Fantasy',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Projects We Love',
+      Title: 'STEM',
       href: '/',
       Header: false,
     },
     {
-      Title: 'Saved Projects',
-      href: '/',
-      Header: false,
-    },
-    {
-      Title: 'Trending',
-      href: '/',
-      Header: false,
-    },
-    {
-      Title: 'Newly Launched',
-      href: '/',
-      Header: false,
-    },
-    {
-      Title: 'Collections',
-      href: '/',
-      Header: true,
-    },
-    {
-      Title: 'Recommended For You',
-      href: '/',
-      Header: false,
-    },
-    {
-      Title: 'Projects We Love',
-      href: '/',
-      Header: false,
-    },
-    {
-      Title: 'Saved Projects',
-      href: '/',
-      Header: false,
-    },
-    {
-      Title: 'Trending',
-      href: '/',
-      Header: false,
-    },
-    {
-      Title: 'Newly Launched',
+      Title: 'Zine Quest',
       href: '/',
       Header: false,
     },
   ]
   let count = 0
+
+  const xButton = (
+    <div className="z-20 cursor-pointer" onClick={() => setDiscover()}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 text-secondary"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </div>
+  )
 
   return (
     <div className="relative text-darkGray">
@@ -264,7 +293,7 @@ export default function Navbar() {
         <div className="flex justify-center border py-5 md:hidden">
           <Link href="/">{Logo}</Link>
         </div>
-        <div className="grid w-full grid-cols-3 py-5 px-10">
+        <div className="grid w-full grid-cols-2 py-5 px-10 md:grid-cols-3">
           <div className="flex space-x-5">
             <h1 className="cursor-pointer" onClick={() => setDiscover()}>
               Discover
@@ -301,102 +330,46 @@ export default function Navbar() {
             <div className="h-0 bg-secondary peer-hover:h-0.5" />
           </div>
           <Link href="/">Design & Tech</Link>
-          <Link href="/">Film</Link>
           <Link href="/">Food & Craft</Link>
           <Link href="/">Games</Link>
         </div>
       </div>
+      {/* Popup Discover Menu */}
       <div
-        className={`absolute top-0 left-0 h-screen w-full bg-white px-5 text-2xl ${
+        className={`absolute top-0 left-0 h-screen w-full bg-white px-20 pt-4 text-2xl ${
           showDiscover ? 'block' : 'hidden'
         } `}
       >
-        <div className="absolute right-7" onClick={() => setDiscover()}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-secondary"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </div>
-        <div>
-          <div className="flex flex-col space-y-2 pb-5 text-softBlack ">
-             
-            <h1
-              className={`sticky top-[0px] flex h-8 items-center  bg-white text-base text-secondary`}
-            ></h1>
-            <h1
-              className={`sticky top-[32px] flex h-12 items-center border-b border-darkGray bg-white text-base text-secondary`}
-            >
-              HELLO
-            </h1>
-            <Link href="">World</Link>
-            <Link href="">World</Link> <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <h1
-              className={`sticky top-[79px] flex h-12 items-center border-b border-darkGray bg-white text-base text-secondary`}
-            >
-              HELLO
-            </h1>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <h1
-              className={`sticky top-[126px] flex h-12 items-center border-b border-darkGray bg-white text-base text-secondary`}
-            >
-              HELLO
-            </h1>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-            <Link href="">World</Link>
-          </div>
+        <div className="flex flex-col space-y-2 pb-[200px] text-softBlack">
+          {DiscoverLinks.map((link) => {
+            if (link.Header) {
+              count += 1
+              return count == 1 ? (
+                <h1
+                  className={`sticky top-[${`${
+                    (count - 1) * 48
+                  }`}px] flex h-12 items-center justify-between border-b border-darkGray bg-white pr-5 text-base text-secondary`}
+                >
+                  {link.Title}
+                  {xButton}
+                </h1>
+              ) : (
+                <h1
+                  className={`sticky top-[${`${
+                    (count - 1) * 48
+                  }`}px] flex h-12 items-center border-b border-darkGray bg-white text-base text-secondary`}
+                >
+                  {link.Title}
+                </h1>
+              )
+            } else {
+              return (
+                <Link href={link.href}>
+                  <h1 className="text-2xl md:text-4xl ">{link.Title}</h1>
+                </Link>
+              )
+            }
+          })}
         </div>
       </div>
     </div>
