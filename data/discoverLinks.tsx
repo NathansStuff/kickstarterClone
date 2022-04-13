@@ -1,4 +1,4 @@
-const discoverLinks = [
+export const discoverLinks = [
   {
     Title: 'Collections',
     href: '/',
@@ -250,5 +250,3 @@ const discoverLinks = [
     Header: false,
   },
 ]
-
-export default discoverLinks

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ChevronLeft, ChevronRight } from './SVGImages'
-import { Project } from '../types/project'
+import { Project } from '../types/types'
 import ProjectCard from './ProjectCard'
 
 type Props = {

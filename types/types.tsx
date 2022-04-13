@@ -6,3 +6,10 @@ export type Project = {
  fundedCurrent: number;
  image: string;
 }
+
+export type News = {
+ title: string;
+ blurb: string;
+ image: string;
+ callToAction: string;
+}

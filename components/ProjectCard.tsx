@@ -1,6 +1,6 @@
 import React from 'react'
 import { Bookmark, ThumbDown, ThumbUp } from './SVGImages'
-import { Project } from '../types/project'
+import { Project } from '../types/types'
 
 type Props = {
   project: Project

@@ -10,6 +10,7 @@ module.exports = {
         secondary: '#037362',
         darkGray: '#656969',
         softBlack: '#282828',
+        blueLink: '#5555FF'
       },
       flexGrow: {
         2: 2,

@@ -8,7 +8,7 @@ import {
   ThumbUpLarge,
   BookmarkLarge,
 } from './SVGImages'
-import { Project } from '../types/project'
+import { Project } from '../types/types'
 
 type Props = {
   project: Project
