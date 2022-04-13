@@ -6,7 +6,7 @@ type Props = {
 
 export default function NewsCard({ news }: Props) {
   return (
-    <div className="border-b py-20">
+    <div className="border-b py-20 px-5">
       <div className="lg:flex lg:px-0">
         <img
           alt="news cover image"

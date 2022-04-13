@@ -14,7 +14,7 @@ export default function RecommendedCards({ projects }: Props) {
   })
   const [recommendedNumber, setRecommenededNumber] = useState(0)
 
-  function lowerRecommendedNumber() {
+  function decreaseRecommendedNumber() {
     if (recommendedNumber == 0) {
       return
     } else {
@@ -39,7 +39,7 @@ export default function RecommendedCards({ projects }: Props) {
       {styledProjects[2 + recommendedNumber]}
       <div className="flex items-center justify-end space-x-3 pt-5 text-xl">
         <div
-          onClick={() => lowerRecommendedNumber()}
+          onClick={() => decreaseRecommendedNumber()}
           className={`${
             recommendedNumber == 0
               ? 'text-darkGray'
