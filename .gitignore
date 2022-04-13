@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+/kickstartersanity/node_modules
+/kickstartersanity/config
+/kickstartersanity/plugins
 
 # testing
 /coverage

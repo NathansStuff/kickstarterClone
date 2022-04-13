@@ -12,6 +12,7 @@ export type News = {
   blurb: string
   image: string
   callToAction: string
+  slug: string
 }
 
 export type Interview = {
