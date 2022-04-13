@@ -26,7 +26,7 @@ export const news = [
   },
   {
     image:
-      '	https://ksr-static.imgix.net/DS_KS_BeautyRender_02…ixlib=rb-4.0.2&s=744f4416207472d60e7a9ebf51e27f20',
+      'https://ksr-static.imgix.net/DS_KS_BeautyRender_0209-cdf5937.jpg?ixlib=rb-4.0.2&s=744f4416207472d60e7a9ebf51e27f20',
     title:
       'How Brandon Sanderson’s Kickstarter Project Broke the Bookish Internet',
     blurb:

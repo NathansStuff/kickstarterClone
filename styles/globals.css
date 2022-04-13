@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tint__image {
+ position: relative;
+ float: left;
+ cursor: pointer;
+}
+
+.tint__image:hover:before {
+ content: "";
+ display: block;
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ background: rgba(20, 219, 80, 0.5);
+ transition: background .5s linear;
+}
+
+.tint__image:before {
+ background: none;
+ transition: background .5s linear;
+
+}
