@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <div className="border-y border-secondary py-5">
+    <div className="border-y border-secondary py-5 ">
       {/* Section 1 Categories */}
       <div className="flex flex-col space-x-5 space-y-5 border-b pb-5 md:space-y-0">
         <div className="pl-5 text-sm font-bold uppercase text-secondary md:hidden">
@@ -117,31 +117,33 @@ export default function Footer() {
         </div>
       </div>
       {/* Section 3 Socials */}
-      <div className="items-center justify-between border-b py-10 px-10 md:flex">
-        <div>
-          <h1 className="text-sm">Kickstarter, PBC © 2022</h1>
-        </div>
-        <div className="flex space-x-5 pt-5 ">
-          <Link href="/">
-            <div className="cursor-pointer">
-              <FacebookLogo />
-            </div>
-          </Link>
-          <Link href="/">
-            <div className="cursor-pointer">
-              <InstagramLogo />
-            </div>
-          </Link>
-          <Link href="/">
-            <div className="cursor-pointer">
-              <TwitterLogo />
-            </div>
-          </Link>
-          <Link href="/">
-            <div className="cursor-pointer">
-              <YoutubeLogo />
-            </div>
-          </Link>
+      <div className="border-b py-10 px-10 md:flex items-center justify-center">
+        <div className="max-w-[1366px] md:flex items-center justify-between w-full">
+          <div>
+            <h1 className="text-sm">Kickstarter, PBC © 2022</h1>
+          </div>
+          <div className="flex space-x-5 pt-5 ">
+            <Link href="/">
+              <div className="cursor-pointer">
+                <FacebookLogo />
+              </div>
+            </Link>
+            <Link href="/">
+              <div className="cursor-pointer">
+                <InstagramLogo />
+              </div>
+            </Link>
+            <Link href="/">
+              <div className="cursor-pointer">
+                <TwitterLogo />
+              </div>
+            </Link>
+            <Link href="/">
+              <div className="cursor-pointer">
+                <YoutubeLogo />
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
       {/* Section 4 T&C */}

@@ -52,7 +52,7 @@ const Home: NextPage = () => {
           type="creator success stories"
         />
       </PageBg>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

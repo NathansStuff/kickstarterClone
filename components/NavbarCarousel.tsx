@@ -1,6 +1,6 @@
 export default function NavbarCarousel() {
   return (
-    <div className=" top-1 flex h-20 items-center justify-around border px-20">
+    <div className=" top-1 flex h-20 items-center justify-around border-b border-t px-20">
       <div>
         <h1 className="peer">Arts</h1>
         <div className="h-0 bg-secondary peer-hover:h-0.5" />

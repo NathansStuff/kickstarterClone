@@ -93,17 +93,17 @@ export default function Navbar() {
         } `}
       >
         <div className="flex flex-col space-y-2 pb-[200px] text-softBlack">
-          {discoverLinks.map((link) => {
+          {discoverLinks.map((link, index) => {
             if (link.Header) {
               count += 1
               return count == 1 ? (
-                <h1
+                <h1 key={index}
                   className={`sticky top-[${`${
                     (count - 1) * 48
                   }`}px] flex h-12 items-center justify-between border-b border-darkGray bg-white pr-5 text-base text-secondary`}
                 >
                   {link.Title}
-                  <div
+                  <div key={index}
                     className="z-20 cursor-pointer"
                     onClick={() => setDiscover()}
                   >
