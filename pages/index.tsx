@@ -8,10 +8,12 @@ import Featured from '../components/Featured'
 import NewsCard from '../components/NewsCard'
 import ProjectsCarousel from '../components/ProjectsCarousel'
 import InterviewsComponent from '../components/Interviews'
+import Articles from '../components/Articles'
 
 import { news } from '../data/news'
 import { projects } from '../data/projects'
 import { interviews } from '../data/interviews'
+import { articles } from '../data/articles'
 
 const Home: NextPage = () => {
   return (
@@ -34,8 +36,18 @@ const Home: NextPage = () => {
         <NewsCard news={news[2]} />
         <ProjectsCarousel projects={projects} type="Home Stretch" href="" />
         <NewsCard news={news[3]} />
-        <InterviewsComponent interviews={interviews.slice(0,4)} />
-
+        <InterviewsComponent interviews={interviews.slice(0, 4)} />
+        <NewsCard news={news[4]} />
+        <ProjectsCarousel projects={projects} type="Near You" href="" />
+        <NewsCard news={news[5]} />
+        <Articles articles={articles.slice(0, 4)} type="the making of" />
+        <NewsCard news={news[6]} />
+        {/* Creators Corner */}
+        <NewsCard news={news[7]} />
+        <Articles
+          articles={articles.slice(4, 8)}
+          type="creator success stories"
+        />
       </PageBg>
     </div>
   )

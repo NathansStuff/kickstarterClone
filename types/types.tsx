@@ -19,3 +19,10 @@ export type Interview = {
   image: string
   href: string
 }
+
+export type Article = {
+  title: string
+  image: string
+  href: string
+  blurb: string
+}
