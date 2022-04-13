@@ -6,44 +6,83 @@ import { XButton, SearchIcon, Logo } from './SVGImages'
 
 export default function Navbar() {
   const [showDiscover, setShowDiscover] = useState(false)
+  const [showSearch, setShowSearch] = useState(false)
 
   function setDiscover() {
     setShowDiscover(!showDiscover)
   }
+  function setSearch() {
+    setShowSearch(!showSearch)
+  }
 
   let count = 0
+
+  const searchInput = (
+    <div className="flex justify-between p-5 shadow-md ">
+      <input
+        placeholder="Search for projects or categories"
+        className="w-full"
+      />
+      <div className="z-20 cursor-pointer " onClick={() => setSearch()}>
+        <XButton />
+      </div>
+    </div>
+  )
+
+  const NavbarFirstRow = (
+    <div className="grid w-full grid-cols-2 py-5 px-10 md:grid-cols-3">
+      <div className="flex space-x-5">
+        <h1 className="cursor-pointer" onClick={() => setDiscover()}>
+          Discover
+        </h1>
+        <Link href="/">
+          <div className='flex space-x-2'>
+            <h1>Start</h1>
+            <h1 className="hidden md:block"> a project</h1>
+          </div>
+        </Link>
+      </div>
+      <div className="hidden justify-center md:flex">
+        <Logo />
+      </div>
+      <div className="flex justify-end space-x-5">
+        <div
+          className="flex cursor-pointer items-center space-x-1"
+          onClick={() => setSearch()}
+        >
+          <h1 className="hidden md:block">Search</h1>
+          <SearchIcon />
+        </div>
+        <h1 className="cursor-pointer">Log in</h1>
+      </div>
+    </div>
+  )
 
   return (
     <div className="relative text-darkGray">
       {/* Top Row Nav */}
       <div className="flex w-full flex-col">
         {/* Small Screens, Logo pops to top */}
-        <div className="flex justify-center border py-5 md:hidden">
-          <Link href="/">
-            <Logo />
-          </Link>
-        </div>
+
+        {showSearch ? (
+          <div className="md:hidden">
+            {searchInput}
+            {NavbarFirstRow}
+          </div>
+        ) : (
+          <div className="flex justify-center border py-5 md:hidden">
+            <Link href="/">
+              <Logo />
+            </Link>
+          </div>
+        )}
+
         {/* Larger screens, Logo is part of grid */}
-        <div className="grid w-full grid-cols-2 py-5 px-10 md:grid-cols-3">
-          <div className="flex space-x-5">
-            <h1 className="cursor-pointer" onClick={() => setDiscover()}>
-              Discover
-            </h1>
-            <Link href="/">Start a project</Link>
-          </div>
-          <div className="hidden justify-center md:flex">
-            <Logo />
-          </div>
-          <div className="flex justify-end space-x-5">
-            <div className=" ">
-              <div className="flex cursor-pointer items-center space-x-1">
-                <h1>Search</h1>
-                <SearchIcon />
-              </div>
-            </div>
-            <h1 className="cursor-pointer">Log in</h1>
-          </div>
-        </div>
+        {showSearch ? (
+          <div className="hidden md:block">{searchInput}</div>
+        ) : (
+          NavbarFirstRow
+        )}
         {/* Secondary Row Nav */}
         <NavbarCarousel />
       </div>
