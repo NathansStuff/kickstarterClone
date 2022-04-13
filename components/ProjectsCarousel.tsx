@@ -54,6 +54,7 @@ export default function ProjectsCarousel({ projects, type, href }: Props) {
   projects.map((project) => {
     styledProjects.push(<CarouselCard project={project} />)
   })
+
   return (
     <div className="w-full border-b px-5 pb-10">
       <div className="flex pt-5">
@@ -70,10 +71,18 @@ export default function ProjectsCarousel({ projects, type, href }: Props) {
           {increaseShevron}
         </div>
       </div>
-      {styledProjects[0 + showNumber * 4]}
-      {styledProjects[1 + showNumber * 4]}
-      {styledProjects[2 + showNumber * 4]}
-      {styledProjects[3 + showNumber * 4]}
+      {/* Small Screens Default */}
+      <div className="md:hidden">
+        {styledProjects[0 + showNumber * 4]}
+        {styledProjects[1 + showNumber * 4]}
+        {styledProjects[2 + showNumber * 4]}
+        {styledProjects[3 + showNumber * 4]}
+      </div>
+      {/* Medium Screens */}
+      <div className="hidden md:flex lg:hidden space-x-5">
+        {styledProjects[0 + showNumber ]}
+        {styledProjects[1 + showNumber ]}
+      </div>
       <div className="flex items-center justify-center space-x-3 pt-10">
         <div className="md:hidden">{decreaseChevron}</div>
         <div
