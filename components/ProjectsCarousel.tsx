@@ -71,8 +71,8 @@ export default function ProjectsCarousel({ projects, type, href }: Props) {
           {increaseShevron}
         </div>
       </div>
-      {/* Small Screens Default */}
-      <div className="md:hidden">
+      {/* Small Screens + Large Screens */}
+      <div className="md:hidden lg:flex lg:space-x-5">
         {styledProjects[0 + showNumber * 4]}
         {styledProjects[1 + showNumber * 4]}
         {styledProjects[2 + showNumber * 4]}

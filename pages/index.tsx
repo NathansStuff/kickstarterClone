@@ -15,15 +15,18 @@ const Home: NextPage = () => {
   return (
     <div className="">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Kickstarter</title>
+        <link
+          rel="icon"
+          href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3exDVi-sUfCNvGt91s1XoCW7JDclgcaaX9pwbaB6MP4BtrUb0zy8n0CAEfHaVFpQa-g&usqp=CAU"
+        />
       </Head>
       <Navbar />
       <PageBg>
         <Stats />
         <Featured projects={projects} />
         <NewsCard news={news[0]} />
-        <ProjectsCarousel projects={projects} type='Fresh Favourites' href='' />
+        <ProjectsCarousel projects={projects} type="Fresh Favourites" href="" />
       </PageBg>
     </div>
   )
