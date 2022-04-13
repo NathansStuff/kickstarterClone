@@ -1,49 +1,88 @@
-import React from 'react'
-import { Bookmark, ThumbDown, ThumbUp } from './SVGImages'
+import React, { useState } from 'react'
+import { ChevronLeft, ChevronRight } from './SVGImages'
 import { Project } from '../types/project'
+import ProjectCard from './ProjectCard'
 
 type Props = {
   projects: Project[]
 }
 
 export default function RecommendedCards({ projects }: Props) {
-  console.log(projects)
+  let styledProjects: JSX.Element[] = []
+  projects.map((project) => {
+    styledProjects.push(<ProjectCard project={project} />)
+  })
+  const [recommendedNumber, setRecommenededNumber] = useState(0)
+
+  function lowerRecommendedNumber() {
+    if (recommendedNumber == 0) {
+      return
+    } else {
+      setRecommenededNumber(recommendedNumber - 1)
+    }
+  }
+  function increaseRecommendedNumber() {
+    if (recommendedNumber == 2) {
+      return
+    } else {
+      setRecommenededNumber(recommendedNumber + 1)
+    }
+  }
+
   return (
     <div className="">
       <h1 className="text-sm font-bold uppercase text-darkGray">
         Recommended for you
       </h1>
-      {projects.map((project) => {
-        return (
-          <div className="group relative flex space-x-5 overflow-hidden border-b pt-5 pb-5">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="h-[90px] object-cover"
-            />
-            <div>
-              <h1 className="truncate text-sm group-hover:text-secondary group-hover:underline">
-                {project.title}
-              </h1>
-              <h1 className="text-sm font-bold text-secondary">
-                {(project.fundedCurrent / project.fundedMin) * 100}% funded
-              </h1>
-              <h1 className="text-sm">By {project.author}</h1>
-              <div className="flex pt-1">
-                <button className="absolute flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
-                  <Bookmark />
-                </button>
-                <button className="absolute left-[210px] flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
-                  <ThumbUp />
-                </button>
-                <button className="absolute left-[240px] flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
-                  <ThumbDown />
-                </button>
-              </div>
-            </div>
-          </div>
-        )
-      })}
+      {styledProjects[0 + recommendedNumber]}
+      {styledProjects[1 + recommendedNumber]}
+      {styledProjects[2 + recommendedNumber]}
+      <div className="flex items-center justify-end space-x-3 pt-5 text-xl">
+        <div
+          onClick={() => lowerRecommendedNumber()}
+          className={`${
+            recommendedNumber == 0
+              ? 'text-darkGray'
+              : 'text-blue-500 hover:border'
+          } flex  h-6 w-6 cursor-pointer items-center justify-center rounded-full`}
+        >
+          <ChevronLeft />
+        </div>
+        <p
+          onClick={() => setRecommenededNumber(0)}
+          className={`cursor-pointer ${
+            recommendedNumber == 0 ? 'text-blue-800 underline' : 'text-blue-500'
+          } border-1`}
+        >
+          1
+        </p>
+        <p
+          onClick={() => setRecommenededNumber(1)}
+          className={`cursor-pointer ${
+            recommendedNumber == 1 ? 'text-blue-800 underline' : 'text-blue-500'
+          } `}
+        >
+          2
+        </p>
+        <p
+          onClick={() => setRecommenededNumber(2)}
+          className={`cursor-pointer ${
+            recommendedNumber == 2 ? 'text-blue-800 underline' : 'text-blue-500'
+          } `}
+        >
+          3
+        </p>
+        <div
+          onClick={() => increaseRecommendedNumber()}
+          className={`${
+            recommendedNumber == 2
+              ? 'text-darkGray'
+              : 'text-blue-500 hover:border'
+          } flex  h-6 w-6 cursor-pointer items-center justify-center rounded-full`}
+        >
+          <ChevronRight />
+        </div>
+      </div>
     </div>
   )
 }

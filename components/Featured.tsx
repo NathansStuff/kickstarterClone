@@ -10,7 +10,7 @@ export default function Featured() {
         <FeaturedCard project={projects[0]} />
       </div>
       <div className='w-full'>
-        <RecommendedCards projects={projects}/>
+        <RecommendedCards projects={projects.slice(0, 9)}/>
       </div>
     </div>
   )
