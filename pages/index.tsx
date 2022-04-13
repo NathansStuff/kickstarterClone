@@ -10,6 +10,7 @@ import ProjectsCarousel from '../components/ProjectsCarousel'
 import InterviewsComponent from '../components/Interviews'
 import Articles from '../components/Articles'
 import CreatorsCorner from '../components/CreatorsCorner'
+import Footer from '../components/Footer'
 
 import { news } from '../data/news'
 import { projects } from '../data/projects'
@@ -51,6 +52,7 @@ const Home: NextPage = () => {
           type="creator success stories"
         />
       </PageBg>
+      <Footer/>
     </div>
   )
 }
