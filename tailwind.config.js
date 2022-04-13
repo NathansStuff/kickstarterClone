@@ -11,6 +11,9 @@ module.exports = {
         darkGray: '#656969',
         softBlack: '#282828',
       },
+      flexGrow: {
+        2: 2,
+      },
     },
   },
   plugins: [],

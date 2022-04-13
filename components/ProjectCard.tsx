@@ -8,14 +8,14 @@ type Props = {
 
 export default function ProjectCard({project}: Props) {
   return (
-   <div className="group relative flex space-x-5 overflow-hidden border-b pt-5 pb-5">
+   <div className="group relative flex space-x-5 overflow-hidden border-b pt-5 pb-5 max-h-[129px]">
    <img
      src={project.image}
      alt={project.title}
-     className="h-[90px] object-cover"
+     className="max-h-[90px] object-cover w-1/3"
    />
    <div>
-     <h1 className="truncate text-sm group-hover:text-secondary group-hover:underline">
+     <h1 className="truncate  text-sm group-hover:text-secondary group-hover:underline">
        {project.title}
      </h1>
      <h1 className="text-sm font-bold text-secondary">
@@ -23,13 +23,13 @@ export default function ProjectCard({project}: Props) {
      </h1>
      <h1 className="text-sm">By {project.author}</h1>
      <div className="flex pt-1">
-       <button className="absolute flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
+       <button className=" flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
          <Bookmark />
        </button>
-       <button className="absolute left-[210px] flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
+       <button className=" left-[210px] flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
          <ThumbUp />
        </button>
-       <button className="absolute left-[240px] flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
+       <button className=" left-[240px] flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
          <ThumbDown />
        </button>
      </div>

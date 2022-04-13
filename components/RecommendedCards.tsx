@@ -30,7 +30,7 @@ export default function RecommendedCards({ projects }: Props) {
   }
 
   return (
-    <div className="">
+    <div className="border-b px-5 pt-5 pb-10 md:border-0">
       <h1 className="text-sm font-bold uppercase text-darkGray">
         Recommended for you
       </h1>
@@ -78,7 +78,7 @@ export default function RecommendedCards({ projects }: Props) {
             recommendedNumber == 2
               ? 'text-darkGray'
               : 'text-blue-500 hover:border'
-          } flex  h-6 w-6 cursor-pointer items-center justify-center rounded-full`}
+          } flex  h-6 w-6 cursor-pointer items-center justify-center rounded-full `}
         >
           <ChevronRight />
         </div>
