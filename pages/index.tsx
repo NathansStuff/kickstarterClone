@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import Stats from '../components/Stats'
+import PageBg from '../components/PageBg'
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Navbar />
-      <Stats />
+      <PageBg>
+        <Stats />
+      </PageBg>
     </div>
   )
 }
