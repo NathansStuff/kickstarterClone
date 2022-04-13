@@ -26,3 +26,10 @@ export type Article = {
   href: string
   blurb: string
 }
+
+export type CreatorsComments = {
+  title: string
+  image: string
+  href: string
+  blurb: string
+}

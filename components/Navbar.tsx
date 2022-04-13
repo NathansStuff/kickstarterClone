@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { discoverLinks } from '../data/discoverLinks'
+import {discoverLinks} from '../data/discoverLinks'
 import NavbarCarousel from './NavbarCarousel'
 import { XButton, SearchIcon, Logo } from './SVGImages'
 
@@ -36,7 +36,7 @@ export default function Navbar() {
           Discover
         </h1>
         <Link href="/">
-          <div className="flex space-x-2">
+          <div className='flex space-x-2'>
             <h1>Start</h1>
             <h1 className="hidden md:block"> a project</h1>
           </div>

@@ -14,13 +14,13 @@ export default function Articles({ articles, type }: Props) {
       </h1>
       <div className="block w-full items-center lg:flex lg:space-x-5 mt-5">
         <div className="flex w-full space-x-5  ">
-          {articles.slice(0, 2).map((article) => {
-            return <ArticleCard article={article} />
+          {articles.slice(0, 2).map((article, index) => {
+            return <ArticleCard article={article} key={index}/>
           })}
         </div>
         <div className="flex w-full space-x-5 ">
-          {articles.slice(2, 4).map((article) => {
-            return <ArticleCard article={article} />
+          {articles.slice(2, 4).map((article, index) => {
+            return <ArticleCard article={article} key={index}/>
           })}
         </div>
       </div>

@@ -9,11 +9,13 @@ import NewsCard from '../components/NewsCard'
 import ProjectsCarousel from '../components/ProjectsCarousel'
 import InterviewsComponent from '../components/Interviews'
 import Articles from '../components/Articles'
+import CreatorsCorner from '../components/CreatorsCorner'
 
 import { news } from '../data/news'
 import { projects } from '../data/projects'
 import { interviews } from '../data/interviews'
 import { articles } from '../data/articles'
+import { creatorsComments } from '../data/creatorsComments'
 
 const Home: NextPage = () => {
   return (
@@ -42,7 +44,7 @@ const Home: NextPage = () => {
         <NewsCard news={news[5]} />
         <Articles articles={articles.slice(0, 4)} type="the making of" />
         <NewsCard news={news[6]} />
-        {/* Creators Corner */}
+        <CreatorsCorner creatorsComments={creatorsComments} />
         <NewsCard news={news[7]} />
         <Articles
           articles={articles.slice(4, 8)}
