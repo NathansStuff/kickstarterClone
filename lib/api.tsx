@@ -41,6 +41,7 @@ const projectFields = `
  'creator': creator.name,
  fundedMin,
  body,
+ blurb,
  liveAt,
  endsAt,
  'image': image.asset->url
