@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import Navbar from '../components/Navbar'
@@ -12,21 +12,25 @@ import Articles from '../components/Articles'
 import CreatorsCorner from '../components/CreatorsCorner'
 import Footer from '../components/Footer'
 
-import { news } from '../data/news'
 import { projects } from '../data/projects'
 import { interviews } from '../data/interviews'
 import { articles } from '../data/articles'
 import { creatorsComments } from '../data/creatorsComments'
+import { getAllNews, getNewsBySlug } from '../lib/api';
+import { News } from '../types/types';
 
-const Home: NextPage = () => {
+type Props = {
+  news: News[]
+}
+
+function Home({ news }: Props) {
   return (
     <div className="">
       <Head>
         <title>Kickstarter</title>
         <link
           rel="icon"
-          href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3exDVi-sUfCNvGt91s1XoCW7JDclgcaaX9pwbaB6MP4BtrUb0zy8n0CAEfHaVFpQa-g&usqp=CAU"
-        />
+          href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3exDVi-sUfCNvGt91s1XoCW7JDclgcaaX9pwbaB6MP4BtrUb0zy8n0CAEfHaVFpQa-g&usqp=CAU" />
       </Head>
       <Navbar />
       <PageBg>
@@ -49,12 +53,29 @@ const Home: NextPage = () => {
         <NewsCard news={news[7]} />
         <Articles
           articles={articles.slice(4, 8)}
-          type="creator success stories"
-        />
+          type="creator success stories" />
       </PageBg>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default Home
+
+
+export const getStaticProps: GetStaticProps = async () => {
+  const news = await getAllNews()
+
+  if (!news) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: {
+      news,
+    },
+    revalidate: 60,
+  }
+}

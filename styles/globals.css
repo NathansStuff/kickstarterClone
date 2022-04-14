@@ -23,5 +23,9 @@
 .tint__image:before {
  background: none;
  transition: background .5s linear;
+}
 
+.blog__banner {
+ background-image: url('https://ksr-static.imgix.net/theme_assets-102037e.png?ixlib=rb-4.0.2&fm=pjpg&s=8cf068fcc7ccb116a19dd3e8af083a66');
+ padding: 100px 0;
 }

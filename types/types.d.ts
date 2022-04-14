@@ -13,6 +13,8 @@ export type News = {
   image: string
   callToAction: string
   slug: string
+  publishedAt: string
+  body: object[]
 }
 
 export type Interview = {

@@ -6,6 +6,8 @@ const newsFields = `
  title,
  callToAction,
  blurb,
+ publishedAt,
+ body,
  'image': image.asset->url
 `
 
