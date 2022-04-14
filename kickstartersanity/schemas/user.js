@@ -17,5 +17,18 @@ export default {
         maxLength: 96,
       },
     },
+    {
+      name: 'location',
+      title: 'Location',
+      type: 'string',
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 }

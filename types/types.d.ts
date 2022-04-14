@@ -1,7 +1,7 @@
 export type Project = {
   title: string
   blurb: string
-  author: string
+  creator: Creator
   fundedMin: number
   fundedCurrent: number
   image: string
@@ -9,7 +9,8 @@ export type Project = {
   body: object[]
   liveAt: string
   endsAt: string
-
+  weLove: boolean
+  category: string
 }
 
 export type News = {
@@ -35,27 +36,14 @@ export type Article = {
   blurb: string
 }
 
-export type CreatorsComments = {
-  title: string
-  image: string
-  href: string
-  blurb: string
-}
-
 export type User = {
   name: string
   slug: string
+  image: string
 }
 
-export type SanityProject = {
-  title: string
-  blurb: string
-  creator: User
-  fundedMin: number
+export type Creator = {
+  name: string
   image: string
-  slug: string
-  body: object[]
-  liveAt: string
-  endsAt: string
-  
+  location: string
 }

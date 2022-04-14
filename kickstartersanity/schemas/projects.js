@@ -24,6 +24,11 @@ export default {
       },
     },
     {
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+    },
+    {
       name: 'blurb',
       title: 'Blurb',
       type: 'string',
@@ -55,6 +60,11 @@ export default {
       name: 'fundedMin',
       title: 'Minimum Funding Needed',
       type: 'number',
+    },
+    {
+      name: 'weLove',
+      title: 'Project We Love',
+      type: 'boolean',
     },
   ],
 }

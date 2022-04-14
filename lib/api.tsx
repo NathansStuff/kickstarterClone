@@ -38,10 +38,12 @@ const projectFields = `
  'slug': slug.current,
  title,
  callToAction,
- 'creator': creator.name,
+ 'creator': creator->{name, location, 'image': image.asset->url},
  fundedMin,
  body,
  blurb,
+ weLove,
+ category,
  liveAt,
  endsAt,
  'image': image.asset->url
@@ -70,11 +72,12 @@ export async function getProjectBySlug(slug: string) {
   return project[0]
 }
 
-
 const userFields = `
  'slug': slug.current,
- name
-`
+ name,
+ 'image': image.asset->url,
+ location
+ `
 
 export async function getAllUsers() {
   const results = await client.fetch(
@@ -98,4 +101,3 @@ export async function getUserBySlug(slug: string) {
   }
   return user[0]
 }
-
