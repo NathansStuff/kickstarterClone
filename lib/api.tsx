@@ -33,3 +33,68 @@ export async function getNewsBySlug(slug: string) {
   }
   return news[0]
 }
+
+const projectFields = `
+ 'slug': slug.current,
+ title,
+ callToAction,
+ 'creator': creator.name,
+ fundedMin,
+ body,
+ liveAt,
+ endsAt,
+ 'image': image.asset->url
+`
+
+export async function getAllProjects() {
+  const results = await client.fetch(
+    `*[_type == "projects"]{${projectFields}} | order(date asc)`
+  )
+  return results
+}
+
+export async function getProjectBySlug(slug: string) {
+  const project = await client.fetch(
+    `*[_type == "projects" && slug.current == $slug]{${projectFields}}`,
+    {
+      slug,
+    }
+  )
+
+  if (!project) {
+    return {
+      notFound: true,
+    }
+  }
+  return project[0]
+}
+
+
+const userFields = `
+ 'slug': slug.current,
+ name
+`
+
+export async function getAllUsers() {
+  const results = await client.fetch(
+    `*[_type == "user"]{${userFields}} | order(date asc)`
+  )
+  return results
+}
+
+export async function getUserBySlug(slug: string) {
+  const user = await client.fetch(
+    `*[_type == "user" && slug.current == $slug]{${userFields}}`,
+    {
+      slug,
+    }
+  )
+
+  if (!user) {
+    return {
+      notFound: true,
+    }
+  }
+  return user[0]
+}
+

@@ -3,6 +3,7 @@ import React from 'react'
 import PortableText from 'react-portable-text'
 
 import { News } from '../types/types'
+import { FacebookLogo, TwitterLogo } from './SVGImages'
 
 type Props = {
   blog: News
@@ -10,7 +11,7 @@ type Props = {
 }
 
 export default function BlogContent({ blog, allNews }: Props) {
- console.log(blog.body)
+  console.log(blog.body)
   return (
     <div className="w-full px-5 md:px-0">
       <div className="flex w-full flex-col items-start justify-center space-y-10 py-20">
@@ -22,10 +23,20 @@ export default function BlogContent({ blog, allNews }: Props) {
         </p>
       </div>
       <div className="flex flex-col md:flex-row md:space-x-10">
-        <div className="grow-1 border-t py-5 ">
-          <p className="text-xs text-darkGray">Share this post</p>
-          {/* socials */}
-          facebook
+        <div className="grow-1 w-full border-t pt-5 flex space-x-5 wrap justify-between">
+          <p className="pb-5 text-xs text-darkGray">Share this post</p>
+          <div className='flex space-x-5'>
+            <a href="https://www.facebook.com" target="_blank">
+              <div className="cursor-pointer">
+                <FacebookLogo />
+              </div>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <div className="cursor-pointer">
+                <TwitterLogo />
+              </div>
+            </a>
+          </div>
         </div>
         <div className="grow-2 py-10 md:py-0">
           <img
@@ -60,7 +71,7 @@ export default function BlogContent({ blog, allNews }: Props) {
             }}
           />
         </div>
-        <div className="grow-1 border-t pt-5">
+        <div className="grow-1 w-full border-t pt-5">
           <h1 className="pb-5 text-sm text-softBlack">Recent posts</h1>
           <div className="flex flex-col space-y-5 text-xs text-darkGray">
             {allNews.map((news, index) => {

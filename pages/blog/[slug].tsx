@@ -6,8 +6,8 @@ import { getAllNews, getNewsBySlug } from '../../lib/api'
 import { News } from '../../types/types'
 import Navbar from '../../components/Navbar'
 import PageBg from '../../components/PageBg'
-import Footer from '../../components/Footer';
-import BlogBanner from '../../components/BlogBanner';
+import Footer from '../../components/Footer'
+import BlogBanner from '../../components/BlogBanner'
 import BlogContent from '../../components/BlogContent'
 
 type Props = {
@@ -25,10 +25,10 @@ export default function ({ news, allNews }: Props) {
           href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3exDVi-sUfCNvGt91s1XoCW7JDclgcaaX9pwbaB6MP4BtrUb0zy8n0CAEfHaVFpQa-g&usqp=CAU"
         />
       </Head>
-      <Navbar />
+      <Navbar secondRow={false} />
       <BlogBanner />
       <PageBg>
-        <BlogContent blog={news} allNews={allNews.slice(0,5)}/>
+        <BlogContent blog={news} allNews={allNews.slice(0, 5)} />
       </PageBg>
       <Footer />
     </div>
@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       news,
-      allNews
+      allNews,
     },
     revalidate: 60,
   }

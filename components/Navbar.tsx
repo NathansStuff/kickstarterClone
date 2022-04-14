@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import {discoverLinks} from '../data/discoverLinks'
+import { discoverLinks } from '../data/discoverLinks'
 import NavbarCarousel from './NavbarCarousel'
 import { XButton, SearchIcon, Logo } from './SVGImages'
 
-export default function Navbar() {
+type Props = {
+  secondRow?: Boolean
+}
+
+export default function Navbar({ secondRow = true }: Props) {
   const [showDiscover, setShowDiscover] = useState(false)
   const [showSearch, setShowSearch] = useState(false)
 
@@ -36,7 +40,7 @@ export default function Navbar() {
           Discover
         </h1>
         <Link href="/">
-          <div className='flex space-x-2'>
+          <div className="flex space-x-2">
             <h1>Start</h1>
             <h1 className="hidden md:block"> a project</h1>
           </div>
@@ -84,7 +88,7 @@ export default function Navbar() {
           NavbarFirstRow
         )}
         {/* Secondary Row Nav */}
-        <NavbarCarousel />
+        {secondRow ? <NavbarCarousel /> : ''}
       </div>
       {/* Popup Discover Menu */}
       <div
@@ -97,13 +101,15 @@ export default function Navbar() {
             if (link.Header) {
               count += 1
               return count == 1 ? (
-                <h1 key={index}
+                <h1
+                  key={index}
                   className={`sticky top-[${`${
                     (count - 1) * 48
                   }`}px] flex h-12 items-center justify-between border-b border-darkGray bg-white pr-5 text-base text-secondary`}
                 >
                   {link.Title}
-                  <div key={index}
+                  <div
+                    key={index}
                     className="z-20 cursor-pointer"
                     onClick={() => setDiscover()}
                   >

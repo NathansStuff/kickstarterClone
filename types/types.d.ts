@@ -5,6 +5,11 @@ export type Project = {
   fundedMin: number
   fundedCurrent: number
   image: string
+  slug: string
+  body: object[]
+  liveAt: string
+  endsAt: string
+
 }
 
 export type News = {
@@ -35,4 +40,22 @@ export type CreatorsComments = {
   image: string
   href: string
   blurb: string
+}
+
+export type User = {
+  name: string
+  slug: string
+}
+
+export type SanityProject = {
+  title: string
+  blurb: string
+  creator: User
+  fundedMin: number
+  image: string
+  slug: string
+  body: object[]
+  liveAt: string
+  endsAt: string
+  
 }
