@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Project } from '../../types/types'
 import { Bookmark } from '../../assets'
-import FaqScreen from './FaqScreen'
-import UpdateScreen from './UpdateScreen'
+import FaqScreen from './ProjectFaqScreen'
+import UpdateScreen from './ProjectUpdateScreen'
 import ProjectCampaignScreen from './ProjectCampaignScreen'
+import ProjectCommentScreen from './ProjectCommentScreen'
 
 type Props = {
   project: Project
@@ -12,6 +13,14 @@ type Props = {
 
 export default function ProjectDetails({ project, setAbout }: Props) {
   const [activeScreen, setActiveScreen] = useState(3)
+
+  // Count the comments and replies
+  let commentCount = 0
+  commentCount += project.comments?.length || 0
+  project.comments?.map((comment) => {
+    commentCount += comment.replies?.length || 0
+    }
+  )
 
   function showScreen() {
     switch (activeScreen) {
@@ -38,7 +47,7 @@ export default function ProjectDetails({ project, setAbout }: Props) {
           />
         )
       case 4:
-        return commentsScreen
+        return <ProjectCommentScreen comments={project.comments} creator={project.creator} setActiveScreen={setActiveScreen} />
       case 5:
         return communityScreen
       default:
@@ -92,11 +101,14 @@ export default function ProjectDetails({ project, setAbout }: Props) {
           </div>
           <div
             onClick={() => setActiveScreen(4)}
-            className={`cursor-pointer py-5  hover:text-secondary ${
+            className={`flex cursor-pointer space-x-1 py-5  hover:text-secondary ${
               activeScreen == 4 ? 'border-b-2 border-black font-bold' : ''
             }`}
           >
             <h1>Comments</h1>
+            <p className="text-[10px] font-bold text-tertiary">
+              {commentCount}
+            </p>
           </div>
           <div
             onClick={() => setActiveScreen(5)}
@@ -117,12 +129,6 @@ export default function ProjectDetails({ project, setAbout }: Props) {
           </div>
         </div>
       </div>
-    </div>
-  )
-
-  const commentsScreen = (
-    <div>
-      <h1>Comments Screen</h1>
     </div>
   )
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import { XButton } from '../../assets';
-import { Creator } from '../../types/types';
+import { User } from '../../types/types';
 
 type Props = {
  aboutPopup: boolean
  aboutPopupFunction: Function
- creator: Creator
+ creator: User
 }
 
 export default function ProjectAboutPopupScreen({aboutPopup, aboutPopupFunction, creator }:Props) {

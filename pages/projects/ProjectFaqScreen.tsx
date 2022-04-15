@@ -13,7 +13,7 @@ type Props = {
   faqs: FAQ[]
 }
 
-export default function FaqScreen({ faqs }: Props) {
+export default function ProjectFaqScreen({ faqs }: Props) {
   // Add All FAQs
   let rows: { title: string; content: string }[] = []
   faqs.map((faq) => {

@@ -5,15 +5,15 @@ import {
   HeartLogo,
   UpdateLogo,
 } from '../../assets'
-import { Creator, Update } from '../../types/types'
+import { User, Update } from '../../types/types'
 
 type UpdateCardProps = {
   update: Update
   index: number
-  creator: Creator
+  creator: User
 }
 
-export default function UpdateCard({
+export default function ProjectUpdateCard({
   update,
   index,
   creator,

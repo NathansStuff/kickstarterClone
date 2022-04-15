@@ -1,6 +1,6 @@
 import React from 'react'
 import { User, Update } from '../../types/types'
-import UpdateCard from './UpdateCard'
+import UpdateCard from './ProjectUpdateCard'
 
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   creator: User
 }
 
-export default function UpdateScreen({ updates, launchDate, creator }: Props) {
+export default function ProjectUpdateScreen({ updates, launchDate, creator }: Props) {
   const liveDate = new Date(launchDate)
   return (
     <div className="bg-[#FBFBFA]">

@@ -1,13 +1,13 @@
 import PortableTextContent from '../../components/PortableTextContent'
 import ProjectRewardsCard from './ProjectRewardsCard'
-import { Pledge, Creator } from '../../types/types'
+import { Pledge, User } from '../../types/types'
 
 type Props = {
   estimatedDelivery: string
   setAbout: Function
   risks: string
   pledges: Pledge[]
-  creator: Creator
+  creator: User
   story: object[]
 }
 

@@ -20,14 +20,21 @@ export type Project = {
 }
 
 export type Comment = {
-  user: User
+  user: UserBasic
   comment: string
   replies: Reply[]
+  createdAt: string
+}
+
+export type UserBasic = {
+  name: string
+  image: string
 }
 
 export type Reply = {
-  user: User
+  user: UserBasic
   reply: string
+  createdAt: string
 }
 
 export type Update = {
@@ -75,4 +82,5 @@ export type User = {
   slug: string
   image: string
   about: string
+  location: string
 }

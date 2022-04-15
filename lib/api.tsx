@@ -38,11 +38,35 @@ const projectFields = `
  'slug': slug.current,
  title,
  callToAction,
- 'creator': creator->{name, location, about, 'image': image.asset->url},
+ 'creator': creator->
+  {
+    name, 
+    location, 
+    about, 
+    'image': image.asset->url
+  },
  faqs,
  updates,
  fundedMin,
- comments,
+ comments[]
+  {
+   comment, 
+   user->{
+    name, 
+    'image': image.asset->url
+    },
+   createdAt, 
+   replies[]
+   {
+     reply,
+     createdAt,
+     user->
+     {
+       name,
+       'image': image.asset->url
+      }
+    }
+  },
  story,
  risks,
  blurb,
