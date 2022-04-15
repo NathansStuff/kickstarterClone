@@ -18,7 +18,7 @@ type Props = {
 export default function ProjectFirstSection({ project }: Props) {
   // Heading & Title
   const heading = (
-    <div className="px-5 pb-10 md:px-32 md:pb-0 lg:py-10">
+    <div className="px-5 pb-10 md:px-32 md:pb-0 lg:py-10 max-w-full">
       <h1 className="flex justify-center pb-2 text-center text-2xl font-bold">
         {project.title}
       </h1>
@@ -50,7 +50,7 @@ export default function ProjectFirstSection({ project }: Props) {
 
   // Project Metadata
   const projectMeta = (
-    <div className="flex space-x-5 border-y border-gray-300 p-5 md:border-b md:px-10 lg:border-0 lg:px-0">
+    <div className="flex space-x-5 border-y border-gray-300 p-5 md:border-b md:px-10 lg:border-0 lg:px-0 flex-wrap">
       {project.weLove ? (
         <div className="flex items-center justify-center space-x-2">
           <KickstarterGreen />
@@ -103,7 +103,7 @@ export default function ProjectFirstSection({ project }: Props) {
       <div className="m-5 flex cursor-pointer items-center justify-center bg-[#028858] py-2 hover:bg-secondary md:mx-32 md:mb-0 lg:mx-0  lg:px-0">
         <h1 className="text-white">Back this project</h1>
       </div>
-      <div className="flex w-full justify-between px-5 md:px-32 lg:px-0">
+      <div className="flex w-full justify-between px-5 md:px-32 lg:px-0 flex-wrap">
         <div className="my-5 flex cursor-pointer items-center justify-center space-x-5 border border-gray-300 px-20 py-2 hover:border-black hover:shadow-md">
           <Bookmark />
           <h1 className="">Remind me</h1>
@@ -163,12 +163,12 @@ export default function ProjectFirstSection({ project }: Props) {
 
   return (
     <div className="flex w-full flex-col items-center justify-center bg-[#FBFBFA]">
-      <div className="flex w-full max-w-[1366px] flex-col items-center justify-center md:max-w-full ">
+      <div className="flex w-full max-w-[1366px] flex-col items-center justify-center md:max-w-full overflow-hidden ">
         {/* Small Screen: Heading */}
         <div className="hidden lg:block">{heading}</div>
         <div className="lg:flex lg:max-w-[1250px] lg:space-x-10 ">
-          <div className="lg:w-full lg:grow-2">
-            <img alt="project image" src={project.image} />
+          <div className="lg:w-full lg:grow-2 ">
+            <img alt="project image" src={project.image} className='max-w-full max-h-full object-contain'/>
             {/* video - Not done */}
             <div className="hidden md:block"> {projectMeta}</div>
             <div className="flex flex-col pt-5 lg:hidden ">

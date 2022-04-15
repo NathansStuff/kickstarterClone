@@ -11,6 +11,12 @@ export type Project = {
   endsAt: string
   weLove: boolean
   category: string
+  faqs: FAQ[]
+}
+
+export type FAQ = {
+  question: string
+  answer: string
 }
 
 export type News = {

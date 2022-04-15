@@ -6,6 +6,7 @@ import news from './news'
 import blockContent from './blockContent';
 import user from './user'
 import projects from './projects';
+import faq from './faq';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -19,6 +20,7 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     blockContent,
     user,
-    projects
+    projects,
+    faq
   ]),
 })

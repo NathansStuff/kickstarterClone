@@ -39,6 +39,7 @@ const projectFields = `
  title,
  callToAction,
  'creator': creator->{name, location, 'image': image.asset->url},
+ faqs,
  fundedMin,
  body,
  blurb,
@@ -53,6 +54,7 @@ export async function getAllProjects() {
   const results = await client.fetch(
     `*[_type == "projects"]{${projectFields}} | order(date asc)`
   )
+  console.log('>>>>>>>>>>>>>>>>>>>' + results)
   return results
 }
 

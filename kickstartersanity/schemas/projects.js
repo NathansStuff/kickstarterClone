@@ -62,6 +62,16 @@ export default {
       type: 'number',
     },
     {
+      title: 'FAQs',
+      name: 'faqs',
+      type: 'array',
+      of: [
+        {
+          type: 'faq',
+        }
+      ]
+    },
+    {
       name: 'weLove',
       title: 'Project We Love',
       type: 'boolean',
