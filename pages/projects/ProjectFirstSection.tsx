@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Project } from '../types/types'
+import { Project } from '../../types/types'
 import {
   BackerTrustFundingIcon,
   BackerTrustIcon,
@@ -10,7 +10,7 @@ import {
   KickstarterGreen,
   LocationMarker,
   TwitterLogo,
-} from './SVGImages'
+} from '../../components/SVGImages'
 
 type Props = {
   project: Project

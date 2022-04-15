@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Pledge, Project } from '../types/types'
-import PortableTextContent from './PortableTextContent'
+import { Pledge, Project } from '../../types/types'
+import PortableTextContent from '../../components/PortableTextContent'
 import PortableText from 'react-portable-text'
-import { Bookmark } from './SVGImages'
+import { Bookmark } from '../../components/SVGImages'
+import FaqScreen from './FaqScreen'
 
 type Props = {
   project: Project
@@ -15,14 +16,14 @@ export default function ProjectDetails({ project, setAbout }: Props) {
     month: 'long',
   })
   const shipYear = shipDate.getFullYear()
-  const [activeScreen, setActiveScreen] = useState(0)
+  const [activeScreen, setActiveScreen] = useState(2)
 
   function showScreen() {
     switch (activeScreen) {
       case 0:
         return campaignScreen
       case 2:
-        return faqScreen
+        return <FaqScreen faqs={project.faqs} />
       case 3:
         return updatesScreen
       case 4:
@@ -103,9 +104,9 @@ export default function ProjectDetails({ project, setAbout }: Props) {
     return (
       <div className="mb-5 ml-5 border p-5">
         <h1 className="pb-5 text-xl">Pledge US{amount} or more</h1>
-        <p className="text-sm">
+        <div className="text-sm">
           <PortableTextContent content={body} />
-        </p>
+        </div>
         <div className="flex pt-5">
           <div className="flex flex-col">
             <p className="text-xs text-darkGray">Estimated Delivery</p>
@@ -132,10 +133,10 @@ export default function ProjectDetails({ project, setAbout }: Props) {
           <div className="w-2/4" />
           <div className="flex w-1/3 flex-col items-end justify-start">
             <div className="w-full border-b pb-2">
-              <h1 className="font-bold text-primary cursor-pointer">Story</h1>
+              <h1 className="cursor-pointer font-bold text-primary">Story</h1>
             </div>
             <div className="mt-5 w-full border-b">
-              <h1 className="font-bold text-primary cursor-pointer">Risks</h1>
+              <h1 className="cursor-pointer font-bold text-primary">Risks</h1>
             </div>
           </div>
         </div>
@@ -169,18 +170,16 @@ export default function ProjectDetails({ project, setAbout }: Props) {
             </div>
             <h1 className="ml-5 py-5 text-2xl">Support</h1>
 
-            {project.pledges.map((pledge) => {
-              return <Rewards amount={pledge.amount} body={pledge.body} />
+            {project.pledges.map((pledge, index) => {
+              return (
+                <div key={index}>
+                  <Rewards amount={pledge.amount} body={pledge.body} />
+                </div>
+              )
             })}
           </div>
         </div>
       </div>
-    </div>
-  )
-
-  const faqScreen = (
-    <div>
-      <h1>FAQ Screen</h1>
     </div>
   )
 

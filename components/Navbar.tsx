@@ -75,9 +75,9 @@ export default function Navbar({ secondRow = true }: Props) {
           </div>
         ) : (
           <div className="flex justify-center border py-5 md:hidden">
-            <Link href="/">
+            <div>
               <Logo />
-            </Link>
+            </div>
           </div>
         )}
 
@@ -118,6 +118,7 @@ export default function Navbar({ secondRow = true }: Props) {
                 </h1>
               ) : (
                 <h1
+                  key={index}
                   className={`sticky top-[${`${
                     (count - 1) * 48
                   }`}px] flex h-12 items-center border-b border-darkGray bg-white text-base text-secondary`}
@@ -127,9 +128,11 @@ export default function Navbar({ secondRow = true }: Props) {
               )
             } else {
               return (
-                <Link href={link.href}>
-                  <h1 className="text-2xl md:text-4xl ">{link.Title}</h1>
-                </Link>
+                <div key={index}>
+                  <Link href={link.href}>
+                    <h1 className="text-2xl md:text-4xl ">{link.Title}</h1>
+                  </Link>
+                </div>
               )
             }
           })}
