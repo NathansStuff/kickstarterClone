@@ -8,6 +8,7 @@ import user from './user'
 import projects from './projects'
 import faq from './faq'
 import pledge from './pledge'
+import update from './update'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -24,5 +25,6 @@ export default createSchema({
     projects,
     faq,
     pledge,
+    update,
   ]),
 })

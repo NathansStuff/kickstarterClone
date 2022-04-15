@@ -96,5 +96,15 @@ export default {
       title: 'Project We Love',
       type: 'boolean',
     },
+    {
+      title: 'Updates',
+      name: 'updates',
+      type: 'array',
+      of: [
+        {
+          type: 'update',
+        },
+      ],
+    },
   ],
 }
