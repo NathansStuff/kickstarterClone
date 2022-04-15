@@ -9,6 +9,8 @@ export type Project = {
   body: object[]
   liveAt: string
   endsAt: string
+  estimatedDelivery: string
+  pledges: object[]
   weLove: boolean
   category: string
   faqs: FAQ[]

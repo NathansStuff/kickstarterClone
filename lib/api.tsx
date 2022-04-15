@@ -47,6 +47,8 @@ const projectFields = `
  category,
  liveAt,
  endsAt,
+ estimatedDelivery,
+ pledges,
  'image': image.asset->url
 `
 

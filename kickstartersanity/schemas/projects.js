@@ -57,6 +57,11 @@ export default {
       type: 'datetime',
     },
     {
+      name: 'estimatedDelivery',
+      title: 'Estimated Delivery',
+      type: 'datetime',
+    },
+    {
       name: 'fundedMin',
       title: 'Minimum Funding Needed',
       type: 'number',
@@ -68,6 +73,16 @@ export default {
       of: [
         {
           type: 'faq',
+        },
+      ],
+    },
+    {
+      title: 'Pledges',
+      name: 'pledges',
+      type: 'array',
+      of: [
+        {
+          type: 'pledge',
         },
       ],
     },
