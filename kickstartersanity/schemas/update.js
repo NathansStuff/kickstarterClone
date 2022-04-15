@@ -13,5 +13,16 @@ export default {
     title: 'Content',
     type: 'blockContent',
   },
+  {
+    name: 'creator',
+    title: 'Creator',
+    type: 'reference',
+    to: { type: 'user' },
+  },
+  {
+    name: 'createdAt',
+    title: 'Created At',
+    type: 'datetime',
+  },
  ],
 }
