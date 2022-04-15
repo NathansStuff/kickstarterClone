@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next/types'
 import Navbar from '../../components/Navbar'
-import ProjectDetails from '../../components/ProjectDetails';
+import ProjectDetails from '../../components/ProjectDetails'
 import ProjectFirstSection from '../../components/ProjectFirstSection'
 import { getAllProjects, getProjectBySlug } from '../../lib/api'
 import { Project } from '../../types/types'
@@ -21,7 +21,7 @@ export default function ({ project }: Props) {
       </Head>
       <Navbar secondRow={false} />
       <ProjectFirstSection project={project} />
-      <ProjectDetails project={project}/>
+      <ProjectDetails project={project} />
     </div>
   )
 }

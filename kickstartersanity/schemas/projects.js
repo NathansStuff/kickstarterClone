@@ -68,8 +68,8 @@ export default {
       of: [
         {
           type: 'faq',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'weLove',

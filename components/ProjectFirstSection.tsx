@@ -166,7 +166,7 @@ export default function ProjectFirstSection({ project }: Props) {
       <div className="flex w-full max-w-[1366px] flex-col items-center justify-center md:max-w-full overflow-hidden ">
         {/* Small Screen: Heading */}
         <div className="hidden lg:block">{heading}</div>
-        <div className="lg:flex lg:max-w-[1250px] lg:space-x-10 ">
+        <div className="lg:flex lg:max-w-[1250px] lg:space-x-10 md:px-10">
           <div className="lg:w-full lg:grow-2 ">
             <img alt="project image" src={project.image} className='max-w-full max-h-full object-contain'/>
             {/* video - Not done */}

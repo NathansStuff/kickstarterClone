@@ -3,6 +3,7 @@ import React from 'react'
 import PortableText from 'react-portable-text'
 
 import { News } from '../types/types'
+import PortableTextContent from './PortableTextContent';
 import { FacebookLogo, TwitterLogo } from './SVGImages'
 
 type Props = {
@@ -11,7 +12,6 @@ type Props = {
 }
 
 export default function BlogContent({ blog, allNews }: Props) {
-  console.log(blog.body)
   return (
     <div className="w-full px-5 md:px-0">
       <div className="flex w-full flex-col items-start justify-center space-y-10 py-20">
@@ -44,31 +44,7 @@ export default function BlogContent({ blog, allNews }: Props) {
             alt={`${blog.title} cover image`}
             className="pb-10"
           />
-          {/* Content */}
-          <PortableText
-            className="space-y-5"
-            dataset={process.env.SANITY_DATASET_NAME}
-            projectId={process.env.SANITY_PROJECT_ID}
-            content={blog.body}
-            serializers={{
-              h1: (props: any) => {
-                ;<h1 className="my-5 text-2xl font-bold" {...props} />
-              },
-              h2: (props: any) => {
-                ;<h2 className="text-x1 my-5 font-bold" {...props} />
-              },
-              p: (props: any) => {
-                ;<p className="py-5" {...props} />
-              },
-              li: ({ children }: any) => {
-                ;<li className="ml-4 list-disc"> {children} </li>
-              },
-              link: ({ href, children }: any) => {
-                ;<a href={href} className="text-blue-500 hover:underline">
-                  {children}
-                </a>
-              },
-            }}
+          <PortableTextContent content={blog.body}
           />
         </div>
         <div className="grow-1 w-full border-t pt-5">
