@@ -40,6 +40,7 @@ const projectFields = `
  callToAction,
  'creator': creator->{name, location, about, 'image': image.asset->url},
  faqs,
+ updates,
  fundedMin,
  story,
  risks,

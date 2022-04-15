@@ -15,6 +15,14 @@ export type Project = {
   weLove: boolean
   category: string
   faqs: FAQ[]
+  updates: Update[]
+}
+
+export type Update = {
+  title: string
+  content: object[]
+  creator: Creator
+  createdAt: string
 }
 
 export type Pledge = {
