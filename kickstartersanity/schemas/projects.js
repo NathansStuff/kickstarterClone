@@ -106,5 +106,15 @@ export default {
         },
       ],
     },
+    {
+      title: 'Comments',
+      name: 'comments',
+      type: 'array',
+      of: [
+        {
+          type: 'comment',
+        },
+      ],
+    },
   ],
 }

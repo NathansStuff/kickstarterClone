@@ -42,6 +42,7 @@ const projectFields = `
  faqs,
  updates,
  fundedMin,
+ comments,
  story,
  risks,
  blurb,

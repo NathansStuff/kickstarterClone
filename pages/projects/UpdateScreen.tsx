@@ -1,12 +1,12 @@
 import React from 'react'
-import { Creator, Update } from '../../types/types'
+import { User, Update } from '../../types/types'
 import UpdateCard from './UpdateCard'
 
 
 type Props = {
   updates: Update[]
   launchDate: string
-  creator: Creator
+  creator: User
 }
 
 export default function UpdateScreen({ updates, launchDate, creator }: Props) {

@@ -9,6 +9,8 @@ import projects from './projects'
 import faq from './faq'
 import pledge from './pledge'
 import update from './update'
+import reply from './reply'
+import comment from './comment'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -26,5 +28,7 @@ export default createSchema({
     faq,
     pledge,
     update,
+    comment,
+    reply,
   ]),
 })
