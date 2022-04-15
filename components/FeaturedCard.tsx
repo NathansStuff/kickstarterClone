@@ -53,7 +53,7 @@ export default function FeaturedCard({ project }: Props) {
         {project.blurb}
       </p>
       <p className="px-5 pt-5 text-xs text-softBlack md:px-0 md:text-sm">
-        By {project.author}
+        By {project.creator.name}
       </p>
       <div className="mx-5 flex justify-between border-b pt-10 pb-2 md:hidden">
         <button className="flex h-12 items-center justify-center space-x-4 rounded-lg border bg-white px-2">

@@ -116,5 +116,11 @@ export default {
         },
       ],
     },
+    {
+      title: 'Backers',
+      name: 'backers',
+      type: 'array',
+      of: [{ type: 'backer' }],
+    },
   ],
 }

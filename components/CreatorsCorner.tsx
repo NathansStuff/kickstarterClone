@@ -1,9 +1,16 @@
 import React from 'react'
-import { CreatorsComments } from '../types/types'
 import CreatorsCommentCard from './CreatorsCommentCard'
 
-type Props = { creatorsComments: CreatorsComments[] }
+type CreatorsComments = {
+  image: string
+  title: string
+  blurb: string
+  href: string
+}
 
+type Props = {
+  creatorsComments: CreatorsComments[]
+}
 export default function CreatorsCorner({ creatorsComments }: Props) {
   return (
     <div className="border-b py-10 px-5 md:px-0">

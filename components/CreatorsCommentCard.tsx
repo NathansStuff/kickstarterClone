@@ -1,8 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
-import { CreatorsComments } from '../types/types'
 
-type Props = { creatorsComment: CreatorsComments }
+type CreatorsComments = {
+  image: string
+  title: string
+  blurb: string
+  href: string
+}
+
+type Props = {
+  creatorsComment: CreatorsComments
+}
 
 export default function CreatorsCommentCard({ creatorsComment }: Props) {
   return (

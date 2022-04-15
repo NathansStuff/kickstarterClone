@@ -11,6 +11,8 @@ import pledge from './pledge'
 import update from './update'
 import reply from './reply'
 import comment from './comment'
+import location from './location'
+import backers from './backers';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -30,5 +32,7 @@ export default createSchema({
     update,
     comment,
     reply,
+    location,
+    backers
   ]),
 })

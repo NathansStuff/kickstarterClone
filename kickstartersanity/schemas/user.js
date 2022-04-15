@@ -13,7 +13,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'name',
         maxLength: 96,
       },
     },
@@ -23,17 +23,18 @@ export default {
       type: 'text',
     },
     {
-      name: 'location',
-      title: 'Location',
-      type: 'string',
-    },
-    {
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: 'location',
+      title: 'Location',
+      type: 'reference',
+      to: { type: 'location' },
     },
   ],
 }

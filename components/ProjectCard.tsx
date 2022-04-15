@@ -21,7 +21,7 @@ export default function ProjectCard({project}: Props) {
      <h1 className="text-sm font-bold text-secondary">
        {(project.fundedCurrent / project.fundedMin) * 100}% funded
      </h1>
-     <h1 className="text-sm">By {project.author}</h1>
+     <h1 className="text-sm">By {project.creator.name}</h1>
      <div className="flex pt-1">
        <button className=" flex h-6 w-6 items-center justify-center rounded-full border hover:h-7 hover:w-7">
          <Bookmark />

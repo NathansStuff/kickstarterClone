@@ -1,7 +1,7 @@
 export type Project = {
   title: string
   blurb: string
-  creator: User
+  creator: Creator
   fundedMin: number
   fundedCurrent: number
   image: string
@@ -17,6 +17,29 @@ export type Project = {
   faqs: FAQ[]
   updates: Update[]
   comments: Comment[]
+  backers: Backer[]
+}
+
+export type Creator = {
+  name: string
+  location: string
+  about: string
+  image: string
+}
+
+export type BackerUser = {
+  name: string
+  location: Location
+}
+
+export type Location = {
+  city: string
+  country: string
+}
+
+export type Backer = {
+  user: BackerUser[]
+  amount: number
 }
 
 export type Comment = {
@@ -40,7 +63,7 @@ export type Reply = {
 export type Update = {
   title: string
   content: object[]
-  creator: User
+  creator: UserBasic
   createdAt: string
 }
 
@@ -79,8 +102,6 @@ export type Article = {
 
 export type User = {
   name: string
-  slug: string
   image: string
   about: string
-  location: string
 }

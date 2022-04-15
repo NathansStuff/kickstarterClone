@@ -65,7 +65,7 @@ export default function CarouselCard({ project }: Props) {
         <h1 className="text-sm lg:pt-5 ">
           By{' '}
           <span className="cursor-pointer hover:underline">
-            {project.author}
+            {project.creator.name}
           </span>
         </h1>
       </div>

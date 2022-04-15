@@ -37,7 +37,6 @@ export async function getNewsBySlug(slug: string) {
 const projectFields = `
  'slug': slug.current,
  title,
- callToAction,
  'creator': creator->
   {
     name, 
@@ -46,7 +45,13 @@ const projectFields = `
     'image': image.asset->url
   },
  faqs,
- updates,
+ updates[]
+  {
+    createdAt,
+    content,
+    title,
+    'creator': creator->{name, 'image': image.asset->url}
+  },
  fundedMin,
  comments[]
   {
@@ -75,6 +80,7 @@ const projectFields = `
  liveAt,
  endsAt,
  estimatedDelivery,
+ backers[]{amount, user->{name, location->{city, country}}},
  pledges,
  'image': image.asset->url
 `
