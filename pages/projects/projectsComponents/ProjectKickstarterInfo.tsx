@@ -3,7 +3,7 @@ import {
   BackerTrustFundingIcon,
   BackerTrustIcon,
   BackerTrustKickstarterIcon,
-} from '../../assets'
+} from '../../../assets'
 
 export default function ProjectKickstarterInfo() {
   return (

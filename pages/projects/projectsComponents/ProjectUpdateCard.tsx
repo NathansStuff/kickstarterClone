@@ -1,11 +1,11 @@
-import PortableTextContent from '../../components/PortableTextContent'
+import PortableTextContent from '../../../components/PortableTextContent'
 import {
   ChevronRight,
   CommentLogo,
   HeartLogo,
   UpdateLogo,
-} from '../../assets'
-import { User, Update } from '../../types/types'
+} from '../../../assets'
+import { User, Update } from '../../../types/types'
 
 type UpdateCardProps = {
   update: Update

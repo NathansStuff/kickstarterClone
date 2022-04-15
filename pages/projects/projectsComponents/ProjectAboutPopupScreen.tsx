@@ -1,6 +1,6 @@
 import React from 'react'
-import { XButton } from '../../assets';
-import { Creator } from '../../types/types';
+import { XButton } from '../../../assets';
+import { Creator } from '../../../types/types';
 
 type Props = {
  aboutPopup: boolean

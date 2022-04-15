@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Comment, User } from '../../types/types'
+import { Comment } from '../../../types/types'
 
 type Props = {
   comment: Comment

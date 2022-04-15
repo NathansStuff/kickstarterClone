@@ -4,12 +4,12 @@ import { useState } from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import PageBg from '../../components/PageBg'
-import ProjectDetails from './ProjectDetails'
-import ProjectFirstSection from './ProjectFirstSection'
+import ProjectDetails from './projectsComponents/ProjectDetails'
+import ProjectFirstSection from './projectsComponents/ProjectFirstSection'
 import ProjectsCarousel from '../../components/ProjectsCarousel'
 import { getAllProjects, getProjectBySlug } from '../../lib/api'
 import { Project } from '../../types/types'
-import ProjectAboutPopupScreen from './ProjectAboutPopupScreen';
+import ProjectAboutPopupScreen from './projectsComponents/ProjectAboutPopupScreen';
 
 type Props = {
   project: Project

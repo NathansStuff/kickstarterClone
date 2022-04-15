@@ -1,4 +1,4 @@
-import PortableTextContent from "../../components/PortableTextContent";
+import PortableTextContent from "../../../components/PortableTextContent";
 
 type PledgeProps = {
  amount: number

@@ -1,5 +1,5 @@
 import React from 'react'
-import { User, Update } from '../../types/types'
+import { User, Update } from '../../../types/types'
 import UpdateCard from './ProjectUpdateCard'
 
 

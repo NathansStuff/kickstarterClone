@@ -1,5 +1,5 @@
 import React from 'react'
-import { Project } from '../../types/types'
+import { Project } from '../../../types/types'
 import ProjectHeading from './ProjectHeading'
 import ProjectMeta from './ProjectMeta'
 import ProjectKickstarterInfo from './ProjectKickstarterInfo'

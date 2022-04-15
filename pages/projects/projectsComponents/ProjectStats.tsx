@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Bookmark, FacebookLogo, TwitterLogo } from '../../assets';
+import { Bookmark, FacebookLogo, TwitterLogo } from '../../../assets';
 
 type Props = {
  fundedMin: number

@@ -1,4 +1,4 @@
-import { Comment, User } from '../../types/types'
+import { Comment } from '../../../types/types'
 import ProjectCommentCard from './ProjectCommentCard'
 
 type Props = {

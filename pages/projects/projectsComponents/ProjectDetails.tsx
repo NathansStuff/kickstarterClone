@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Project } from '../../types/types'
-import { Bookmark } from '../../assets'
+import { Project } from '../../../types/types'
+import { Bookmark } from '../../../assets'
 import FaqScreen from './ProjectFaqScreen'
 import UpdateScreen from './ProjectUpdateScreen'
 import ProjectCampaignScreen from './ProjectCampaignScreen'

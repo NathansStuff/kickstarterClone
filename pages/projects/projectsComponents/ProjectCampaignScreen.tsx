@@ -1,6 +1,6 @@
-import PortableTextContent from '../../components/PortableTextContent'
+import PortableTextContent from '../../../components/PortableTextContent'
 import ProjectRewardsCard from './ProjectRewardsCard'
-import { Pledge, User } from '../../types/types'
+import { Pledge, User } from '../../../types/types'
 
 type Props = {
   estimatedDelivery: string

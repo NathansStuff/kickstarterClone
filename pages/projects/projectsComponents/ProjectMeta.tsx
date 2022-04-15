@@ -1,5 +1,5 @@
 import React from 'react'
-import { Compass, KickstarterGreen, LocationMarker } from '../../assets';
+import { Compass, KickstarterGreen, LocationMarker } from '../../../assets';
 
 type Props = {
  weLove: boolean

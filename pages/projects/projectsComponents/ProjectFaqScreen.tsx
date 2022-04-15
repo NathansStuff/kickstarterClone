@@ -1,7 +1,7 @@
 import React from 'react'
 // @ts-ignore
 import Faq from 'react-faq-component'
-import { FAQ } from '../../types/types'
+import { FAQ } from '../../../types/types'
 
 // react-faq-component style options
 const config = {
