@@ -38,7 +38,7 @@ const projectFields = `
  'slug': slug.current,
  title,
  callToAction,
- 'creator': creator->{name, location, 'image': image.asset->url},
+ 'creator': creator->{name, location, about, 'image': image.asset->url},
  faqs,
  fundedMin,
  body,

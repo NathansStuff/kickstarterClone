@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import { Project } from '../types/types'
+import { Pledge, Project } from '../types/types'
 import PortableTextContent from './PortableTextContent'
 import PortableText from 'react-portable-text'
 import { Bookmark } from './SVGImages'
 
 type Props = {
   project: Project
+  setAbout: Function
 }
 
-export default function ProjectDetails({ project }: Props) {
+export default function ProjectDetails({ project, setAbout }: Props) {
+  const shipDate = new Date(project.estimatedDelivery)
+  const shipMonth = shipDate.toLocaleString('default', {
+    month: 'long',
+  })
+  const shipYear = shipDate.getFullYear()
+
   const [activeScreen, setActiveScreen] = useState(0)
+
 
   function showScreen() {
     switch (activeScreen) {
       case 0:
         return campaignScreen
-      case 1:
-        return rewardsScreen
       case 2:
         return faqScreen
       case 3:
@@ -26,7 +32,7 @@ export default function ProjectDetails({ project }: Props) {
       case 5:
         return communityScreen
       default:
-        return
+        return campaignScreen
     }
   }
 
@@ -98,31 +104,75 @@ export default function ProjectDetails({ project }: Props) {
     </div>
   )
 
+  type PledgeProps = {
+    amount: number
+    body: object[]
+  }
+
+  function Rewards({ amount, body }: PledgeProps) {
+    return (
+      <div className="mb-5 ml-5 border p-5">
+        <h1 className="pb-5 text-xl">Pledge US{amount} or more</h1>
+        <PortableTextContent content={body} />
+        <div className="flex pt-5">
+          <div className="flex flex-col">
+            <p className="text-xs text-darkGray">Estimated Delivery</p>
+            <p className="text-sm text-softBlack">
+              {`${shipMonth} ${shipYear}`}
+            </p>
+          </div>
+          <div className="flex flex-col ">
+            <p className="text-xs text-darkGray">Ships to</p>
+            <p className="text-sm text-softBlack">Anywhere in the world</p>
+          </div>
+        </div>
+        <div className="mt-5 w-fit rounded-lg bg-[#F3f3f3] py-1 px-2">
+          <p className="text-xs">87 backers</p>
+        </div>
+      </div>
+    )
+  }
+
+
   const campaignScreen = (
     <div className="flex items-center justify-center">
       <div className="flex w-full max-w-[1250px] ">
         <div className="hidden w-1/3 lg:block">
           <h1 className="py-5 text-2xl">Support</h1>
           <div>
-            <h1>HELLO</h1>
+            <h1>LINKS</h1>
           </div>
         </div>
         <div className="w-full">
           <PortableTextContent content={project.body} />
         </div>
-        <div className="hidden w-1/3 md:block">
-          <h1 className="py-5 text-2xl">Support</h1>
-          <div>
-            <h1>HELLO</h1>
+        <div className="hidden w-1/3 flex-col space-y-5 md:flex">
+          <div className="pt-20">
+            {/* About Creator */}
+            <div
+              className="relative ml-5 mb-5 h-60 border p-5"
+              onClick={() => setAbout(true)}
+            >
+              <img
+                src={project.creator.image}
+                alt="creator image"
+                className="absolute top-[-40px] left-[70px] h-20 w-20 rounded-full object-cover"
+              />
+              <h3 className="mt-5">{project.creator.name}</h3>
+              <p>5 created · 3 backed</p>
+              <div className="inline-block h-24 overflow-hidden text-ellipsis">
+                <p className="pt-5 text-sm ">{project.creator.about}</p>
+              </div>
+              <p className="text-sm text-[#007460]">See more</p>
+            </div>
+            <h1 className="ml-5 pt-5 text-2xl">Support</h1>
+
+            {project.pledges.map((pledge) => {
+              return <Rewards amount={pledge.amount} body={pledge.body} />
+            })}
           </div>
         </div>
       </div>
-    </div>
-  )
-
-  const rewardsScreen = (
-    <div>
-      <h1>Rewards Screen</h1>
     </div>
   )
 
@@ -151,7 +201,8 @@ export default function ProjectDetails({ project }: Props) {
   )
 
   return (
-    <div className="pb-40 ">
+    <div className="bg-white pb-40">
+      
       {header}
       <div className="px-5">{showScreen()}</div>
     </div>

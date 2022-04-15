@@ -10,10 +10,15 @@ export type Project = {
   liveAt: string
   endsAt: string
   estimatedDelivery: string
-  pledges: object[]
+  pledges: Pledge[]
   weLove: boolean
   category: string
   faqs: FAQ[]
+}
+
+export type Pledge = {
+  body: object[]
+  amount: number
 }
 
 export type FAQ = {
@@ -54,4 +59,5 @@ export type Creator = {
   name: string
   image: string
   location: string
+  about: string
 }
