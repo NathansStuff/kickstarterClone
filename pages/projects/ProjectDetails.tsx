@@ -47,7 +47,7 @@ export default function ProjectDetails({ project, setAbout }: Props) {
           />
         )
       case 4:
-        return <ProjectCommentScreen comments={project.comments} creator={project.creator} setActiveScreen={setActiveScreen} />
+        return <ProjectCommentScreen comments={project.comments} creatorName={project.creator.name} setActiveScreen={setActiveScreen} />
       case 5:
         return communityScreen
       default:

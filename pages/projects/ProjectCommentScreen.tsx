@@ -3,24 +3,25 @@ import ProjectCommentCard from './ProjectCommentCard'
 
 type Props = {
   comments: Comment[]
-  creator: User
+  creatorName: string
   setActiveScreen: Function
 }
 
 export default function ProjectCommentScreen({
   comments,
-  creator,
+  creatorName,
   setActiveScreen,
 }: Props) {
   return (
-    <div className="flex border-b p-5 pb-20">
+   <div className='flex justify-center items-center'>
+    <div className="flex border-b p-5 pb-20 max-w-[1200px]">
       <div className="flex w-full flex-col space-y-5 md:w-3/4">
         <div className="flex w-full justify-center bg-[#F7F7F6] py-3 px-5 text-sm text-darkGray">
           Only backers can post comments.
         </div>
-        <div className="flex flex-col space-y-5 bg-gray-100 p-2">
+        <div className="flex flex-col bg-gray-100 px-2 pt-5">
           {comments.map((comment) => {
-            return <ProjectCommentCard comment={comment} creator={creator} />
+            return <ProjectCommentCard comment={comment} creatorName={creatorName} />
           })}
         </div>
       </div>
@@ -38,6 +39,6 @@ export default function ProjectCommentScreen({
           Check this project's FAQ
         </p>
       </div>
-    </div>
+    </div></div>
   )
 }
