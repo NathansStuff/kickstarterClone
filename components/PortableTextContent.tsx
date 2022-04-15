@@ -6,13 +6,13 @@ type Props = {
 
 export default function PortableTextContent({ content }: Props) {
  
-  const {SANITY_DATASET_NAME, SANITY_PROJECT_ID} = process.env
+  // const {SANITY_DATASET_NAME, SANITY_PROJECT_ID} = process.env
 
   return (
     <PortableText
       className="space-y-5"
-      dataset={SANITY_DATASET_NAME}
-      projectId={SANITY_PROJECT_ID}   
+      // dataset={SANITY_DATASET_NAME}
+      // projectId={SANITY_PROJECT_ID}   
       content={content}
       serializers={{
         h1: (props: any) => {

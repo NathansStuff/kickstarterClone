@@ -1,15 +1,18 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next/types'
+import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar'
 import ProjectDetails from '../../components/ProjectDetails'
 import ProjectFirstSection from '../../components/ProjectFirstSection'
+import ProjectsCarousel from '../../components/ProjectsCarousel';
 import { getAllProjects, getProjectBySlug } from '../../lib/api'
 import { Project } from '../../types/types'
 
 type Props = {
   project: Project
+  allProjects: Project[]
 }
-export default function ({ project }: Props) {
+export default function ({ project, allProjects }: Props) {
   return (
     <div>
       <Head>
@@ -22,6 +25,9 @@ export default function ({ project }: Props) {
       <Navbar secondRow={false} />
       <ProjectFirstSection project={project} />
       <ProjectDetails project={project} />
+      <ProjectsCarousel projects={allProjects} type="Taking Off" href="" />
+      <Footer />
+
     </div>
   )
 }

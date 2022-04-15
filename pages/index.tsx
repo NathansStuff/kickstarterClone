@@ -16,14 +16,15 @@ import { projects } from '../data/projects'
 import { interviews } from '../data/interviews'
 import { articles } from '../data/articles'
 import { creatorsComments } from '../data/creatorsComments'
-import { getAllNews, getNewsBySlug } from '../lib/api';
-import { News } from '../types/types';
+import { getAllNews, getAllProjects } from '../lib/api';
+import { News, Project } from '../types/types';
 
 type Props = {
   news: News[]
+  projects: Project[]
 }
 
-function Home({ news }: Props) {
+function Home({ news, projects }: Props) {
   return (
     <div className="">
       <Head>
@@ -65,6 +66,7 @@ export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
   const news = await getAllNews()
+  const projects = await getAllProjects()
 
   if (!news) {
     return {
@@ -75,6 +77,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       news,
+      projects
     },
     revalidate: 60,
   }
