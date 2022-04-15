@@ -7,7 +7,7 @@ import {
   ThumbUp,
   ThumbUpLarge,
   BookmarkLarge,
-} from './SVGImages'
+} from '../assets'
 import { Project } from '../types/types'
 
 type Props = {

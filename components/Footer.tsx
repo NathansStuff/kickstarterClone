@@ -5,7 +5,7 @@ import {
   InstagramLogo,
   TwitterLogo,
   YoutubeLogo,
-} from './SVGImages'
+} from '../assets'
 
 export default function Footer() {
   return (

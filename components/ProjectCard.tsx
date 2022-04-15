@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bookmark, ThumbDown, ThumbUp } from './SVGImages'
+import { Bookmark, ThumbDown, ThumbUp } from '../assets'
 import { Project } from '../types/types'
 
 type Props = {

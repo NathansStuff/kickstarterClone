@@ -3,7 +3,7 @@ import {
   BackerTrustFundingIcon,
   BackerTrustIcon,
   BackerTrustKickstarterIcon,
-} from '../../components/SVGImages'
+} from '../../assets'
 
 export default function ProjectKickstarterInfo() {
   return (

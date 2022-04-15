@@ -1,5 +1,5 @@
 import React from 'react'
-import { XButton } from '../../components/SVGImages';
+import { XButton } from '../../assets';
 import { Creator } from '../../types/types';
 
 type Props = {

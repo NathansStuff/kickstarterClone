@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ChevronLeft, ChevronRight } from './SVGImages'
+import { ChevronLeft, ChevronRight } from '../assets'
 import { Project } from '../types/types'
 import ProjectCard from './ProjectCard'
 

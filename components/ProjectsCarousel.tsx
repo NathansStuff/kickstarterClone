@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { Project } from '../types/types'
 import CarouselCard from './CarouselCard'
-import { ChevronLeft, ChevronRight } from './SVGImages'
+import { ChevronLeft, ChevronRight } from '../assets'
 
 type Props = {
   projects: Project[]

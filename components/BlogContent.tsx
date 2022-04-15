@@ -4,7 +4,7 @@ import PortableText from 'react-portable-text'
 
 import { News } from '../types/types'
 import PortableTextContent from './PortableTextContent';
-import { FacebookLogo, TwitterLogo } from './SVGImages'
+import { FacebookLogo, TwitterLogo } from '../assets'
 
 type Props = {
   blog: News

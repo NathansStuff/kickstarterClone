@@ -4,7 +4,7 @@ import {
   CommentLogo,
   HeartLogo,
   UpdateLogo,
-} from '../../components/SVGImages'
+} from '../../assets'
 import { Creator, Update } from '../../types/types'
 
 type UpdateCardProps = {

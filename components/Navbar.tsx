@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { discoverLinks } from '../data/discoverLinks'
 import NavbarCarousel from './NavbarCarousel'
-import { XButton, SearchIcon, Logo } from './SVGImages'
+import { XButton, SearchIcon, Logo } from '../assets'
 
 type Props = {
   secondRow?: Boolean
