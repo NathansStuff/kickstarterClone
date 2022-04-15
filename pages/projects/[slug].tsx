@@ -16,7 +16,7 @@ type Props = {
   allProjects: Project[]
 }
 export default function ({ project, allProjects }: Props) {
-  const [aboutPopup, setAboutPopup] = useState(true)
+  const [aboutPopup, setAboutPopup] = useState(false)
 
   function aboutPopupFunction(event: React.MouseEvent<HTMLDivElement>) {
     if (event.target.id !== 'aboutPopupScreen') {

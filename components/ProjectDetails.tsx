@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Pledge, Project } from '../types/types'
 import PortableTextContent from './PortableTextContent'
 import PortableText from 'react-portable-text'
@@ -15,9 +15,7 @@ export default function ProjectDetails({ project, setAbout }: Props) {
     month: 'long',
   })
   const shipYear = shipDate.getFullYear()
-
   const [activeScreen, setActiveScreen] = useState(0)
-
 
   function showScreen() {
     switch (activeScreen) {
@@ -48,14 +46,6 @@ export default function ProjectDetails({ project, setAbout }: Props) {
             }`}
           >
             <h1>Campaign</h1>
-          </div>
-          <div
-            onClick={() => setActiveScreen(1)}
-            className={`cursor-pointer py-5  hover:text-secondary ${
-              activeScreen == 1 ? 'border-b-2 border-black font-bold' : ''
-            }`}
-          >
-            <h1>Rewards</h1>
           </div>
           <div
             onClick={() => setActiveScreen(2)}
@@ -113,7 +103,9 @@ export default function ProjectDetails({ project, setAbout }: Props) {
     return (
       <div className="mb-5 ml-5 border p-5">
         <h1 className="pb-5 text-xl">Pledge US{amount} or more</h1>
-        <PortableTextContent content={body} />
+        <p className="text-sm">
+          <PortableTextContent content={body} />
+        </p>
         <div className="flex pt-5">
           <div className="flex flex-col">
             <p className="text-xs text-darkGray">Estimated Delivery</p>
@@ -133,21 +125,31 @@ export default function ProjectDetails({ project, setAbout }: Props) {
     )
   }
 
-
   const campaignScreen = (
     <div className="flex items-center justify-center">
-      <div className="flex w-full max-w-[1250px] ">
-        <div className="hidden w-1/3 lg:block">
-          <h1 className="py-5 text-2xl">Support</h1>
-          <div>
-            <h1>LINKS</h1>
+      <div className="mt-10 flex w-full max-w-[1250px]">
+        <div className="hidden w-1/3 lg:flex">
+          <div className="w-2/4" />
+          <div className="flex w-1/3 flex-col items-end justify-start">
+            <div className="w-full border-b pb-2">
+              <h1 className="font-bold text-primary cursor-pointer">Story</h1>
+            </div>
+            <div className="mt-5 w-full border-b">
+              <h1 className="font-bold text-primary cursor-pointer">Risks</h1>
+            </div>
           </div>
         </div>
-        <div className="w-full">
-          <PortableTextContent content={project.body} />
+        <div className="w-full ">
+          <div className="w-full" id="project-story">
+            <PortableTextContent content={project.story} />
+          </div>
+          <div className="w-full" id="project-risks">
+            <h1 className="py-10 text-2xl font-bold">Risks and challenges</h1>
+            <h1>{project.risks} </h1>
+          </div>
         </div>
-        <div className="hidden w-1/3 flex-col space-y-5 md:flex">
-          <div className="pt-20">
+        <div className="hidden w-1/3 flex-col space-y-5 md:flex ">
+          <div className="pt-10">
             {/* About Creator */}
             <div
               className="relative ml-5 mb-5 h-60 border p-5"
@@ -165,7 +167,7 @@ export default function ProjectDetails({ project, setAbout }: Props) {
               </div>
               <p className="text-sm text-[#007460]">See more</p>
             </div>
-            <h1 className="ml-5 pt-5 text-2xl">Support</h1>
+            <h1 className="ml-5 py-5 text-2xl">Support</h1>
 
             {project.pledges.map((pledge) => {
               return <Rewards amount={pledge.amount} body={pledge.body} />
@@ -201,8 +203,7 @@ export default function ProjectDetails({ project, setAbout }: Props) {
   )
 
   return (
-    <div className="bg-white pb-40">
-      
+    <div className="bg-white">
       {header}
       <div className="px-5">{showScreen()}</div>
     </div>

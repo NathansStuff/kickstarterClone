@@ -6,7 +6,8 @@ export type Project = {
   fundedCurrent: number
   image: string
   slug: string
-  body: object[]
+  story: object[]
+  risks: string
   liveAt: string
   endsAt: string
   estimatedDelivery: string

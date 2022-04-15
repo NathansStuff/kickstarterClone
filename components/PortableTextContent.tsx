@@ -16,7 +16,7 @@ export default function PortableTextContent({ content }: Props) {
       content={content}
       serializers={{
         h1: (props: any) => {
-          return <h1 className="my-5 text-2xl font-bold" {...props} />
+          return <h1 className="mb-5 text-2xl font-bold" id={props} {...props} />
         },
         h2: (props: any) => {
           return <h2 className="text-x1 my-5 font-bold" {...props} />

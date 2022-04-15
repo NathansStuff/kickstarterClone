@@ -42,9 +42,14 @@ export default {
       },
     },
     {
-      name: 'body',
-      title: 'Body',
+      name: 'story',
+      title: 'Story',
       type: 'blockContent',
+    },
+    {
+      name: 'risks',
+      title: 'Risks',
+      type: 'text',
     },
     {
       name: 'liveAt',
