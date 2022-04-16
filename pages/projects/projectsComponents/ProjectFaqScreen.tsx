@@ -43,7 +43,7 @@ export default function ProjectFaqScreen({ faqs }: Props) {
   )
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center pb-20 border-b px-10">
       <div className="max-w-[1100px]">
         <div className="py-5">
           <h1 className="pb-5 text-2xl">Frequently Asked Questions</h1>

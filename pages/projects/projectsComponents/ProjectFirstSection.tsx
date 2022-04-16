@@ -10,13 +10,8 @@ type Props = {
   project: Project
 }
 export default function ProjectFirstSection({ project }: Props) {
+  // Used in separate locations on diff screens, initialiazed here
   const heading = <ProjectHeading title={project.title} blurb={project.blurb} />
-  const creatorSection = (
-    <ProjectCreatorSection
-      name={project.creator.name}
-      image={project.creator.image}
-    />
-  )
   const projectMeta = (
     <ProjectMeta
       weLove={project.weLove}
@@ -24,14 +19,7 @@ export default function ProjectFirstSection({ project }: Props) {
       location={project.creator.location}
     />
   )
-  const projectStats = (
-    <ProjectStats
-      projectMeta={projectMeta}
-      endsAt={project.endsAt}
-      fundedMin={project.fundedMin}
-    />
-  )
-  const kickstarterProjectInfo = <ProjectKickstarterInfo />
+
   return (
     <div className="flex w-full flex-col items-center justify-center bg-[#FBFBFA]">
       <div className="flex w-full max-w-[1366px] flex-col items-center justify-center overflow-hidden md:max-w-full ">
@@ -48,12 +36,24 @@ export default function ProjectFirstSection({ project }: Props) {
             <div className="hidden md:block"> {projectMeta}</div>
             <div className="flex flex-col pt-5 lg:hidden ">
               {heading}
-              <div className="md:hidden">{creatorSection}</div>
+              <div className="md:hidden">
+                <ProjectCreatorSection
+                  name={project.creator.name}
+                  image={project.creator.image}
+                />
+              </div>
             </div>
           </div>
-          <div className="lg:grow-1 ">{projectStats}</div>
+          <div className="lg:grow-1 ">
+            <ProjectStats
+              projectMeta={projectMeta}
+              endsAt={project.endsAt}
+              fundedMin={project.fundedMin}
+              backers={project.backers}
+            />
+          </div>
         </div>
-        {kickstarterProjectInfo}
+        <ProjectKickstarterInfo />
       </div>
     </div>
   )

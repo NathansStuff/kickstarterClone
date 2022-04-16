@@ -39,15 +39,17 @@ export default function Navbar({ secondRow = true }: Props) {
         <h1 className="cursor-pointer" onClick={() => setDiscover()}>
           Discover
         </h1>
-        <Link href="/">
+        {/* <Link href="/">
           <div className="flex space-x-2">
             <h1>Start</h1>
             <h1 className="hidden md:block"> a project</h1>
           </div>
-        </Link>
+        </Link> */}
       </div>
       <div className="hidden justify-center md:flex">
-        <Logo />
+        <a href="/">
+          <Logo />
+        </a>
       </div>
       <div className="flex justify-end space-x-5">
         <div

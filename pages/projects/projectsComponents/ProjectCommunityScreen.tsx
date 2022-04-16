@@ -56,9 +56,11 @@ export default function ProjectCommunityScreen({
   }
  
   let citiesMapped = []
+  let count=0
   for (const [key, value] of Object.entries(cities)) {
+    count+=1
    // @ts-ignore
-   citiesMapped.push(backerLocationCard(key, value))
+   citiesMapped.push(<div key={count}>{backerLocationCard(key, value)}</div>)
  }
 
   //@ts-ignore
@@ -97,9 +99,8 @@ export default function ProjectCommunityScreen({
           <div className="w-full border-b py-5" />
           <div className="w-full px-5 pt-5">
            {/* @ts-ignore */}
-            {countrySorted.map((country) => {
-              console.log('*********' + country)
-              return backerLocationCard(country.country, country.count)
+            {countrySorted.map((country, index) => {
+              return (<div key={index}>{backerLocationCard(country.country, country.count)}</div>)
             })}
           </div>
         </div>
