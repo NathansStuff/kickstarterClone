@@ -37,8 +37,13 @@ export type Location = {
   country: string
 }
 
+export type UserNameLocation = {
+  name: string
+  location: Location
+}
+
 export type Backer = {
-  user: BackerUser[]
+  user: UserNameLocation
   amount: number
 }
 

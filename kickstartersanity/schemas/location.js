@@ -1,4 +1,4 @@
-import countries from './country'
+import countries from '../../data/country'
 
 export default {
   name: 'location',
