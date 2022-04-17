@@ -1,5 +1,5 @@
 import React from 'react'
-import { Article } from '../types/types'
+import { Article } from '../../types/types'
 import ArticleCard from './ArticleCard'
 
 type Props = {

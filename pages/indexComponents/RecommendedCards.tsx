@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { ChevronLeft, ChevronRight } from '../assets'
-import { Project } from '../types/types'
-import ProjectCard from './ProjectCard'
+import { ChevronLeft, ChevronRight } from '../../assets'
+import { Project } from '../../types/types'
+import ProjectCard from '../../components/ProjectCard'
 
 type Props = {
   projects: Project[]

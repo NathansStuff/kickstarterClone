@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Article } from '../types/types'
+import { Article } from '../../types/types'
 
 type Props = {
   article: Article

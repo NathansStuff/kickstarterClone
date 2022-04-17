@@ -1,7 +1,7 @@
 import React from 'react'
 import FeaturedCard from './FeaturedCard'
 import RecommendedCards from './RecommendedCards'
-import { Project } from '../types/types'
+import { Project } from '../../types/types'
 
 type Props = {
   projects: Project[]
