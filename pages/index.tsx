@@ -12,22 +12,22 @@ import Articles from './indexComponents/Articles'
 import CreatorsCorner from './indexComponents/CreatorsCorner'
 import Footer from '../components/Footer'
 
-import { interviews } from '../data/interviews'
 import {
   getAllArticles,
+  getAllInterviews,
   getAllNews,
   getAllProjects,
 } from '../lib/api'
-import { Article, News, Project } from '../types/types'
+import { Article, Interview, News, Project } from '../types/types'
 
 type Props = {
   news: News[]
   projects: Project[]
   articles: Article[]
+  interviews: Interview[]
 }
 
-function Home({ news, projects, articles }: Props) {
-
+function Home({ news, projects, articles,interviews }: Props) {
   // Separating articles into their subtypes
   let newsArticles: Article[] = []
   let creatorArticles: Article[] = []
@@ -82,8 +82,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const news = await getAllNews()
   const projects = await getAllProjects()
   const articles = await getAllArticles()
+  const interviews = await getAllInterviews()
 
-  if (!news) {
+  if (!news || !projects || !articles || !interviews) {
     return {
       notFound: true,
     }
@@ -94,6 +95,7 @@ export const getStaticProps: GetStaticProps = async () => {
       news,
       projects,
       articles,
+      interviews,
     },
     revalidate: 60,
   }

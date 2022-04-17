@@ -168,3 +168,16 @@ export async function getArticleBySlug(slug: string) {
   }
   return user[0]
 }
+
+const interviewFields = `
+ title,
+ href,
+ 'image': image.asset->url,
+ `
+
+export async function getAllInterviews() {
+  const results = await client.fetch(
+    `*[_type == "interviews"]{${interviewFields}} | order(date asc)`
+  )
+  return results
+}

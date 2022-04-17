@@ -14,6 +14,7 @@ import comment from './comment'
 import location from './location'
 import backers from './backers';
 import article from './article';
+import interviews from './interviews';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -35,6 +36,7 @@ export default createSchema({
     reply,
     location,
     backers,
-    article
+    article,
+    interviews
   ]),
 })
