@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { auth } from '../../auth/firebase'
+import Router from 'next/router'
 
 export default function SignUpComponent() {
   const [email, setEmail] = useState('')
@@ -12,14 +13,14 @@ export default function SignUpComponent() {
   const signup = (event: React.FormEvent<HTMLFormElement>) => {
 
     event.preventDefault()
-    
+
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth: any) => {
         // successful
         console.log(auth)
         if (auth) {
-          
+          Router.push('/')
         }
       })
       .catch((error: { message: any }) => alert(error.message))
