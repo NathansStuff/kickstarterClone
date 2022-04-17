@@ -103,6 +103,7 @@ export type Article = {
   slug: string
   blurb: string
   body: object[]
+  tag: string
 }
 
 export type User = {

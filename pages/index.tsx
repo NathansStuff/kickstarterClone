@@ -13,8 +13,11 @@ import CreatorsCorner from './indexComponents/CreatorsCorner'
 import Footer from '../components/Footer'
 
 import { interviews } from '../data/interviews'
-import { creatorsComments } from '../data/creatorsComments'
-import { getAllArticles, getAllNews, getAllProjects, getArticleBySlug } from '../lib/api'
+import {
+  getAllArticles,
+  getAllNews,
+  getAllProjects,
+} from '../lib/api'
 import { Article, News, Project } from '../types/types'
 
 type Props = {
@@ -24,6 +27,17 @@ type Props = {
 }
 
 function Home({ news, projects, articles }: Props) {
+
+  // Separating articles into their subtypes
+  let newsArticles: Article[] = []
+  let creatorArticles: Article[] = []
+  articles.map((article) => {
+    if (article.tag == 'article') {
+      newsArticles.push(article)
+    } else {
+      creatorArticles.push(article)
+    }
+  })
   return (
     <div className="">
       <Head>
@@ -48,12 +62,12 @@ function Home({ news, projects, articles }: Props) {
         <NewsCard news={news[4]} />
         <ProjectsCarousel projects={projects} type="Near You" href="" />
         <NewsCard news={news[5]} />
-        <Articles articles={articles.slice(0, 4)} type="the making of" />
+        <Articles articles={newsArticles.slice(0, 4)} type="the making of" />
         <NewsCard news={news[6]} />
-        <CreatorsCorner creatorsComments={creatorsComments} />
+        <CreatorsCorner creatorsComments={creatorArticles.slice(0, 4)} />
         <NewsCard news={news[7]} />
         <Articles
-          articles={articles.slice(4, 8)}
+          articles={newsArticles.slice(4, 8)}
           type="creator success stories"
         />
       </PageBg>

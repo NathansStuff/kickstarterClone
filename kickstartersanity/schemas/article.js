@@ -23,6 +23,17 @@ export default {
       type: 'string',
     },
     {
+      title: 'Tag',
+      name: 'tag',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Article', value: 'article' },
+          { title: 'Creator', value: 'creator' },
+        ],
+      },
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',

@@ -5,7 +5,7 @@ type CreatorsComments = {
   image: string
   title: string
   blurb: string
-  href: string
+  slug: string
 }
 
 type Props = {

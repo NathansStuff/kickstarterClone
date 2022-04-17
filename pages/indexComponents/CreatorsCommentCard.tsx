@@ -4,7 +4,7 @@ type CreatorsComments = {
   image: string
   title: string
   blurb: string
-  href: string
+  slug: string
 }
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 
 export default function CreatorsCommentCard({ creatorsComment }: Props) {
   return (
-    <a href={creatorsComment.href} >
+    <a href={`article/${creatorsComment.slug}`} >
       <div className="group flex cursor-pointer space-x-5 border-b py-5 md:my-5 md:w-full md:border md:p-5 ">
         <img
           src={creatorsComment.image}

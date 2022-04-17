@@ -142,7 +142,8 @@ const articleFields = `
  title,
  'image': image.asset->url,
  body,
- blurb
+ blurb,
+ tag
  `
 
 export async function getAllArticles() {
