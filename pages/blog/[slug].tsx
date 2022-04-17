@@ -7,8 +7,8 @@ import { News } from '../../types/types'
 import Navbar from '../../components/Navbar'
 import PageBg from '../../components/PageBg'
 import Footer from '../../components/Footer'
-import BlogBanner from '../../components/BlogBanner'
-import BlogContent from '../../components/BlogContent'
+import BlogBanner from './blogComponents/BlogBanner'
+import BlogContent from './blogComponents/BlogContent'
 
 type Props = {
   news: News

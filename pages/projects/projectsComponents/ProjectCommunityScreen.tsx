@@ -17,7 +17,7 @@ export default function ProjectCommunityScreen({
   creatorName,
 }: Props) {
   let backersArray: Location[] = []
-  backers.map((backer) => {
+  backers?.map((backer) => {
     backersArray.push(backer.user.location)
   })
   // given backers, return
@@ -81,7 +81,7 @@ export default function ProjectCommunityScreen({
     <div className='border-b pb-40'>
       <div className="flex items-center justify-center border-b py-20 text-xl text-softBlack md:py-40">
         <h1 className="flex w-full items-center justify-center px-5">
-          {backers.length} people are supporting {creatorName}
+          {backers?.length || 0} people are supporting {creatorName}
         </h1>
       </div>
       <div className='md:flex md:w-full justify-center space-x-20'>

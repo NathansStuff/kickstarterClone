@@ -3,7 +3,6 @@ export type Project = {
   blurb: string
   creator: Creator
   fundedMin: number
-  fundedCurrent: number
   image: string
   slug: string
   story: object[]

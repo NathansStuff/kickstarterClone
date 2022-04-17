@@ -22,17 +22,6 @@ export default function ProjectCampaignScreen({
   return (
     <div className="flex items-center justify-center mx-10">
       <div className="mt-10 flex w-full max-w-[1250px]">
-        {/* <div className="hidden w-1/3 lg:flex"> */}
-          {/* <div className="w-2/4" /> */}
-          {/* <div className="flex w-1/3 flex-col items-end justify-start">
-            <div className="w-full border-b pb-2">
-              <h1 className="cursor-pointer font-bold text-primary">Story</h1>
-            </div>
-            <div className="mt-5 w-full border-b">
-              <h1 className="cursor-pointer font-bold text-primary">Risks</h1>
-            </div>
-          </div> */}
-        {/* </div> */}
         <div className="w-full ">
           <div className="w-full" id="project-story">
             <PortableTextContent content={story} />
@@ -44,7 +33,6 @@ export default function ProjectCampaignScreen({
         </div>
         <div className="hidden w-1/3 flex-col space-y-5 md:flex ">
           <div className="pt-10">
-            {/* About Creator */}
             <div
               className="relative ml-5 mb-5 h-60 border p-5"
               onClick={() => setAbout(true)}
@@ -62,7 +50,6 @@ export default function ProjectCampaignScreen({
               <p className="text-sm text-[#007460]">See more</p>
             </div>
             <h1 className="ml-5 py-5 text-2xl">Support</h1>
-
             {pledges.map((pledge, index) => {
               return (
                 <div key={index}>

@@ -2,9 +2,9 @@ import Link from 'next/link'
 import React from 'react'
 import PortableText from 'react-portable-text'
 
-import { News } from '../types/types'
-import PortableTextContent from './PortableTextContent';
-import { FacebookLogo, TwitterLogo } from '../assets'
+import { News } from '../../../types/types'
+import PortableTextContent from '../../../components/PortableTextContent'
+import { FacebookLogo, TwitterLogo } from '../../../assets'
 
 type Props = {
   blog: News
@@ -13,7 +13,7 @@ type Props = {
 
 export default function BlogContent({ blog, allNews }: Props) {
   return (
-    <div className="w-full px-5 md:px-0">
+    <div className="w-full px-5 pb-20 md:px-0">
       <div className="flex w-full flex-col items-start justify-center space-y-10 py-20">
         <h1 className="flex w-full items-center justify-center text-3xl text-softBlack md:text-5xl">
           {blog.title}
@@ -23,16 +23,16 @@ export default function BlogContent({ blog, allNews }: Props) {
         </p>
       </div>
       <div className="flex flex-col md:flex-row md:space-x-10">
-        <div className="grow-1 w-full border-t pt-5 flex space-x-5 wrap justify-between">
+        <div className="grow-1 wrap flex w-full flex-col border-t pt-5">
           <p className="pb-5 text-xs text-darkGray">Share this post</p>
-          <div className='flex space-x-5'>
+          <div className="m-0 flex w-full justify-start space-x-0 p-0">
             <a href="https://www.facebook.com" target="_blank">
-              <div className="cursor-pointer">
+              <div className="h-10 w-10 cursor-pointer">
                 <FacebookLogo />
               </div>
             </a>
             <a href="https://www.twitter.com" target="_blank">
-              <div className="cursor-pointer">
+              <div className="h-10 w-10 cursor-pointer">
                 <TwitterLogo />
               </div>
             </a>
@@ -44,8 +44,7 @@ export default function BlogContent({ blog, allNews }: Props) {
             alt={`${blog.title} cover image`}
             className="pb-10"
           />
-          <PortableTextContent content={blog.body}
-          />
+          <PortableTextContent content={blog.body} />
         </div>
         <div className="grow-1 w-full border-t pt-5">
           <h1 className="pb-5 text-sm text-softBlack">Recent posts</h1>

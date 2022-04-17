@@ -1,5 +1,5 @@
 import React from 'react'
-import { Interview } from '../types/types'
+import { Interview } from '../../types/types'
 import InterviewsCard from './InterviewsCard'
 
 type Props = {

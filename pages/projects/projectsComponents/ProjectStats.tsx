@@ -16,7 +16,7 @@ export default function ProjectStats({
   backers,
 }: Props) {
   var backerFunding = 0
-  backers.map((backer) => {
+  backers?.map((backer) => {
     backerFunding += backer.amount
   })
 
@@ -25,9 +25,9 @@ export default function ProjectStats({
 
   var t2 = nowDate.getTime()
   var t1 = endDate.getTime()
-  
+
   backerFunding = 5000
-  const backerPercent = (backerFunding / fundedMin ) * 100
+  const backerPercent = (backerFunding / fundedMin) * 100
   //@ts-ignore
   const daysLeft = parseInt((t2 - t1) / (24 * 3600 * 1000))
   return (
@@ -37,8 +37,10 @@ export default function ProjectStats({
         <div className="relative p-5 md:px-0 lg:pt-0">
           <div className="h-2 w-full bg-gray-400" />
           {/* Set to 100% */}
-          
-          <div className={`absolute top-5 h-2 w-[${backerPercent}%] max-w-[calc(100%-40px)]  bg-tertiary lg:top-0`} />
+
+          <div
+            className={`absolute top-5 h-2 w-[${backerPercent}%] max-w-[calc(100%-40px)]  bg-tertiary lg:top-0`}
+          />
         </div>
       </div>
       <div className="flex space-x-5 px-5 pb-5 md:space-x-10 md:px-32 lg:flex-col lg:space-x-0 lg:space-y-5 lg:px-0">
@@ -52,7 +54,7 @@ export default function ProjectStats({
         </div>
         <div>
           <h1 className="text-lg font-bold text-darkGray md:text-3xl">
-            {backers.length}
+            {backers?.length || 0}
           </h1>
           <p className="text-xs text-softBlack md:text-sm">backers</p>
         </div>
@@ -76,11 +78,15 @@ export default function ProjectStats({
           <h1 className="">Remind me</h1>
         </div>
         <div className="my-5 flex w-40 items-center justify-around">
-          <div className="h-10 w-10 p-2">
-            <FacebookLogo />
+          <div className="h-10 w-10 cursor-pointer p-2 ">
+            <a href="https://www.facebook.com" target="_blank">
+              <FacebookLogo />
+            </a>
           </div>
           <div className="h-6 w-6">
-            <TwitterLogo />
+            <a href="https://www.twitter.com" target="_blank">
+              <TwitterLogo />
+            </a>
           </div>
         </div>
       </div>

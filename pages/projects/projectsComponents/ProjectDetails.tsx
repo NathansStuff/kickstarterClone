@@ -13,7 +13,7 @@ type Props = {
 }
 
 export default function ProjectDetails({ project, setAbout }: Props) {
-  const [activeScreen, setActiveScreen] = useState(5)
+  const [activeScreen, setActiveScreen] = useState(0)
 
   // Count the comments and replies
   let commentCount = 0

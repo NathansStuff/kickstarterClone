@@ -20,7 +20,7 @@ export default function ProjectCommentScreen({
           Only backers can post comments.
         </div>
         <div className="flex flex-col bg-gray-100 px-2 pt-5">
-          {comments.map((comment, index) => {
+          {comments?.map((comment, index) => {
             return <ProjectCommentCard comment={comment} creatorName={creatorName} key={index} />
           })}
         </div>
