@@ -13,24 +13,25 @@ import CreatorsCorner from './indexComponents/CreatorsCorner'
 import Footer from '../components/Footer'
 
 import { interviews } from '../data/interviews'
-import { articles } from '../data/articles'
 import { creatorsComments } from '../data/creatorsComments'
-import { getAllNews, getAllProjects } from '../lib/api';
-import { News, Project } from '../types/types';
+import { getAllArticles, getAllNews, getAllProjects, getArticleBySlug } from '../lib/api'
+import { Article, News, Project } from '../types/types'
 
 type Props = {
   news: News[]
   projects: Project[]
+  articles: Article[]
 }
 
-function Home({ news, projects }: Props) {
+function Home({ news, projects, articles }: Props) {
   return (
     <div className="">
       <Head>
         <title>Kickstarter</title>
         <link
           rel="icon"
-          href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3exDVi-sUfCNvGt91s1XoCW7JDclgcaaX9pwbaB6MP4BtrUb0zy8n0CAEfHaVFpQa-g&usqp=CAU" />
+          href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3exDVi-sUfCNvGt91s1XoCW7JDclgcaaX9pwbaB6MP4BtrUb0zy8n0CAEfHaVFpQa-g&usqp=CAU"
+        />
       </Head>
       <Navbar />
       <PageBg>
@@ -53,19 +54,20 @@ function Home({ news, projects }: Props) {
         <NewsCard news={news[7]} />
         <Articles
           articles={articles.slice(4, 8)}
-          type="creator success stories" />
+          type="creator success stories"
+        />
       </PageBg>
       <Footer />
     </div>
-  );
+  )
 }
 
 export default Home
 
-
 export const getStaticProps: GetStaticProps = async () => {
   const news = await getAllNews()
   const projects = await getAllProjects()
+  const articles = await getAllArticles()
 
   if (!news) {
     return {
@@ -76,7 +78,8 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       news,
-      projects
+      projects,
+      articles,
     },
     revalidate: 60,
   }

@@ -7,8 +7,8 @@ import {
   ThumbUp,
   ThumbUpLarge,
   BookmarkLarge,
-} from '../assets'
-import { Project } from '../types/types'
+} from '../../assets'
+import { Project } from '../../types/types'
 
 type Props = {
   project: Project

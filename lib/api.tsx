@@ -1,5 +1,4 @@
 import client from './sanity'
-import imageUrlBuilder from '@sanity/image-url'
 
 const newsFields = `
  'slug': slug.current,
@@ -125,6 +124,37 @@ export async function getAllUsers() {
 export async function getUserBySlug(slug: string) {
   const user = await client.fetch(
     `*[_type == "user" && slug.current == $slug]{${userFields}}`,
+    {
+      slug,
+    }
+  )
+
+  if (!user) {
+    return {
+      notFound: true,
+    }
+  }
+  return user[0]
+}
+
+const articleFields = `
+ 'slug': slug.current,
+ title,
+ 'image': image.asset->url,
+ body,
+ blurb
+ `
+
+export async function getAllArticles() {
+  const results = await client.fetch(
+    `*[_type == "article"]{${articleFields}} | order(date asc)`
+  )
+  return results
+}
+
+export async function getArticleBySlug(slug: string) {
+  const user = await client.fetch(
+    `*[_type == "article" && slug.current == $slug]{${articleFields}}`,
     {
       slug,
     }

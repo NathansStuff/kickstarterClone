@@ -100,8 +100,9 @@ export type Interview = {
 export type Article = {
   title: string
   image: string
-  href: string
+  slug: string
   blurb: string
+  body: object[]
 }
 
 export type User = {
