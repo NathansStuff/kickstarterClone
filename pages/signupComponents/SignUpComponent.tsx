@@ -9,9 +9,10 @@ export default function SignUpComponent() {
   const [news, setNews] = useState(false)
   const [research, setResearch] = useState(false)
 
-
   const signup = (event: React.FormEvent<HTMLFormElement>) => {
+
     event.preventDefault()
+    
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth: any) => {
@@ -23,6 +24,7 @@ export default function SignUpComponent() {
       })
       .catch((error: { message: any }) => alert(error.message))
   }
+  
   return (
     <div className="flex justify-center bg-[#F7F7F6] py-20">
       <div className="w-full max-w-[400px] bg-white ">
@@ -91,7 +93,7 @@ export default function SignUpComponent() {
             </p>{' '}
             <button className="w-full" type="submit">
               <div className="flex w-full justify-center border bg-[#028858] p-2 text-sm text-white hover:bg-secondary">
-                Log in
+                Sign up
               </div>
             </button>
             <div>
@@ -132,7 +134,3 @@ export default function SignUpComponent() {
     </div>
   )
 }
-function useHistory() {
-  throw new Error('Function not implemented.');
-}
-
