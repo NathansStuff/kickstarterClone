@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
+import { auth } from '../../auth/firebase'
 
 export default function SignUpComponent() {
   const [email, setEmail] = useState('')
@@ -8,9 +9,19 @@ export default function SignUpComponent() {
   const [news, setNews] = useState(false)
   const [research, setResearch] = useState(false)
 
-  const onChange = (event: React.FormEvent<HTMLFormElement>) => {
+
+  const signup = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log(event)
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth: any) => {
+        // successful
+        console.log(auth)
+        if (auth) {
+          
+        }
+      })
+      .catch((error: { message: any }) => alert(error.message))
   }
   return (
     <div className="flex justify-center bg-[#F7F7F6] py-20">
@@ -28,7 +39,7 @@ export default function SignUpComponent() {
         </div>
         <div className="m-5 p-5">
           <h1 className="pb-5 text-2xl">Sign up</h1>
-          <form className="space-y-5" onSubmit={onChange}>
+          <form className="space-y-5" onSubmit={signup}>
             <input
               type="text"
               value={name}
@@ -121,3 +132,7 @@ export default function SignUpComponent() {
     </div>
   )
 }
+function useHistory() {
+  throw new Error('Function not implemented.');
+}
+
