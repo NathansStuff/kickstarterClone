@@ -1,19 +1,31 @@
 import Link from 'next/link';
 import React, { useState } from 'react'
+import { auth } from '../../auth/firebase'
+import Router from 'next/router'
 
 export default function SigninComponent() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const onChange = (event: React.FormEvent<HTMLFormElement>) => {
+  const signIn = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log(event)
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth: any) => {
+        // successful
+        console.log(auth)
+        if (auth) {
+          Router.push('/')
+        }
+      })
+      .catch((error: { message: any }) => alert(error.message))
   }
   return (
     <div className="flex justify-center bg-[#F7F7F6] py-20">
       <div className="m-5 w-full max-w-[400px] bg-white p-5">
         <h1 className="pb-5 text-2xl">Log in</h1>
-        <form className="space-y-5" onSubmit={onChange}>
+        <form className="space-y-5" onSubmit={signIn}>
           <input
             type="email"
             value={email}
