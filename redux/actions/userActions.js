@@ -6,13 +6,6 @@ const setUser = (userObj) => {
   }
 }
 
-const logOut = () => {
-  return {
-      type: t.LOG_OUT
-  }
-}
-
 export default {
   setUser,
-  logOut
 }

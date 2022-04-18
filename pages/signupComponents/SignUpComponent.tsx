@@ -18,7 +18,6 @@ export default function SignUpComponent() {
       .createUserWithEmailAndPassword(email, password)
       .then((auth: any) => {
         // successful
-        console.log(auth)
         if (auth) {
           Router.push('/')
         }

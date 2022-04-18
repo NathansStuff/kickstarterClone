@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { discoverLinks } from '../data/discoverLinks'
 import NavbarCarousel from './NavbarCarousel'
 import { XButton, SearchIcon, Logo } from '../assets'
+import { useSelector } from 'react-redux'
+import UserPopup from './UserPopup'
 
 type Props = {
   secondRow?: Boolean
@@ -11,6 +13,9 @@ type Props = {
 export default function Navbar({ secondRow = true }: Props) {
   const [showDiscover, setShowDiscover] = useState(false)
   const [showSearch, setShowSearch] = useState(false)
+  //@ts-ignore
+  const currentUser = useSelector((state) => state.currentUser)
+  console.log('current user >>>>' + currentUser)
 
   function setDiscover() {
     setShowDiscover(!showDiscover)
@@ -34,19 +39,13 @@ export default function Navbar({ secondRow = true }: Props) {
   )
 
   const NavbarFirstRow = (
-    <div className="grid w-full grid-cols-2 py-5 px-10 md:grid-cols-3">
+    <div className="grid w-full grid-cols-2 py-5 px-10 md:grid-cols-3 ">
       <div className="flex space-x-5">
         <h1 className="cursor-pointer" onClick={() => setDiscover()}>
           Discover
         </h1>
-        {/* <Link href="/">
-          <div className="flex space-x-2">
-            <h1>Start</h1>
-            <h1 className="hidden md:block"> a project</h1>
-          </div>
-        </Link> */}
       </div>
-      <div className="hidden justify-center md:flex">
+      <div className="hidden justify-center md:flex ">
         <a href="/">
           <Logo />
         </a>
@@ -59,7 +58,21 @@ export default function Navbar({ secondRow = true }: Props) {
           <h1 className="hidden md:block">Search</h1>
           <SearchIcon />
         </div>
-        <h1 className="cursor-pointer">Log in</h1>
+        {currentUser !== null ? (
+          <div className="relative">
+            <img
+              src="https://ksr-ugc.imgix.net/missing_user_avatar.png?ixlib=rb-4.0.2&w=40&h=40&fit=crop&v=&auto=format&frame=1&q=92&s=d45a87715cd7dc1eede19d8a1fcc8e62"
+              className="h-8 w-8 cursor-pointer rounded-full"
+            />
+            <div className="absolute top-10 right-5 z-30 w-[400px] border bg-white">
+              <UserPopup />
+            </div>
+          </div>
+        ) : (
+          <Link href="/login">
+            <h1 className="cursor-pointer hover:text-secondary">Log in</h1>
+          </Link>
+        )}
       </div>
     </div>
   )

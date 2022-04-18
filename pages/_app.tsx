@@ -5,13 +5,11 @@ import { auth } from '../auth/firebase'
 import { Provider } from 'react-redux'
 import React from 'react'
 import { store, wrapper } from '../redux/store'
-// import {useStateValue} from './StateProvider'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import allActions from '../redux/actions/index'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const dispatch = useDispatch()
-
   // Checks for user State change
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -20,10 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         dispatch(allActions.userActions.setUser(authUser))
       } else {
         // User is logged out
-        dispatch(allActions.userActions.logOut())
+        dispatch(allActions.userActions.setUser(null))
       }
     })
   }, [])
+
   return (
     <Provider store={store}>
       <Component {...pageProps} />

@@ -14,7 +14,6 @@ export default function SigninComponent() {
       .signInWithEmailAndPassword(email, password)
       .then((auth: any) => {
         // successful
-        console.log(auth)
         if (auth) {
           Router.push('/')
         }
