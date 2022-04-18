@@ -6,7 +6,7 @@ import rootReducer from  './reducers/rootReducer'
 
 // initial states here
 const initalState = {
- currentUser: null,
+ currentUser: '',
 };
 
 // middleware

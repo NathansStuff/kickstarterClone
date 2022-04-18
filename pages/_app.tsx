@@ -13,12 +13,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   // Checks for user State change
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
+      console.log(authUser)
+
       if (authUser) {
         // User is logged in
         dispatch(allActions.userActions.setUser(authUser))
       } else {
         // User is logged out
-        dispatch(allActions.userActions.setUser(null))
+        dispatch(allActions.userActions.setUser(''))
       }
     })
   }, [])

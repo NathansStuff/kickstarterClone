@@ -11,10 +11,11 @@ type Props = {
 }
 
 export default function Navbar({ secondRow = true }: Props) {
+  // const [{user}] = useStateValue()
   const [showDiscover, setShowDiscover] = useState(false)
   const [showSearch, setShowSearch] = useState(false)
   //@ts-ignore
-  const currentUser = useSelector((state) => state.currentUser)
+  const currentUser = (useSelector((state) => state.currentUser.user) == '' ? false : true)
   console.log('current user >>>>' + currentUser)
 
   function setDiscover() {
@@ -58,7 +59,7 @@ export default function Navbar({ secondRow = true }: Props) {
           <h1 className="hidden md:block">Search</h1>
           <SearchIcon />
         </div>
-        {currentUser !== null ? (
+        {currentUser ? (
           <div className="relative">
             <img
               src="https://ksr-ugc.imgix.net/missing_user_avatar.png?ixlib=rb-4.0.2&w=40&h=40&fit=crop&v=&auto=format&frame=1&q=92&s=d45a87715cd7dc1eede19d8a1fcc8e62"

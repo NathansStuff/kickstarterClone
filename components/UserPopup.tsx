@@ -2,21 +2,18 @@ import React from 'react'
 import { auth } from '../auth/firebase'
 import Router from 'next/router'
 
-const signOut = (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault()
-
-  auth
-    .signOut()
-    .then((auth: any) => {
-      // successful
-      if (auth) {
-        Router.push('/')
-      }
-    })
-    .catch((error: { message: any }) => alert(error.message))
-}
-
 export default function UserPopup() {
+  const signOut = () => {
+    console.log('signing out!')
+    auth
+      .signOut()
+      .then(() => {
+        // successful
+        Router.push('/')
+      })
+      .catch((error: { message: any }) => alert(error.message))
+  }
+
   return (
     <div className="p-10 text-sm">
       <div className="flex space-x-5 pb-10">
@@ -50,11 +47,8 @@ export default function UserPopup() {
           </div>
         </div>
       </div>
-      <div className="w-full border-t pt-5">
-        <h1
-          className="cursor-pointer hover:text-secondary hover:underline"
-          onClick={() => signOut}
-        >
+      <div className="w-full border-t pt-5" onClick={signOut}>
+        <h1 className="cursor-pointer hover:text-secondary hover:underline">
           Log out
         </h1>
       </div>
